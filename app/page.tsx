@@ -156,6 +156,16 @@ export default function DogBreedSearch() {
                 <TabsTrigger value="wikipedia">Википедия</TabsTrigger>
               </TabsList>
 
+              {/* Вкладка Поиск — здесь нужно вставить каталог пород */}
+              <TabsContent value="search" className="p-4">
+                <BreedDirectory
+                  onSelect={(breedName) => {
+                    setSearchQuery(breedName);
+                    handleSearch();
+                  }}
+                />
+              </TabsContent>
+
               <TabsContent value="chatgpt" className="p-4">
                 <Button
                   variant="outline"

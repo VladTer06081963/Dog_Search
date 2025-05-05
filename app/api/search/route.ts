@@ -7,13 +7,15 @@ export async function POST(req: Request) {
   const name = query.trim();
 
   try {
-    // 1. Попробуем найти в TheDogAPI (только на английском!)
+    // 1. Попытка найти в TheDogAPI
     const dogRes = await fetch(
       `https://api.thedogapi.com/v1/breeds/search?q=${encodeURIComponent(
         name
       )}`,
       {
-        headers: { "x-api-key": process.env.DOG_API_KEY || "" },
+        headers: {
+          "x-api-key": process.env.DOG_API_KEY || "",
+        },
       }
     );
 
@@ -25,9 +27,12 @@ export async function POST(req: Request) {
       const imageRes = await fetch(
         `https://api.thedogapi.com/v1/images/search?breed_ids=${breed.id}`,
         {
-          headers: { "x-api-key": process.env.DOG_API_KEY || "" },
+          headers: {
+            "x-api-key": process.env.DOG_API_KEY || "",
+          },
         }
       );
+
       const imageData = await imageRes.json();
 
       return Response.json({
@@ -43,13 +48,12 @@ export async function POST(req: Request) {
       });
     }
 
-    // 2. Если не нашли — fallback на Википедию
+    // 2. Fallback на Википедию
     const wikiQuery = encodeURIComponent(name.replace(/ /g, "_"));
     const wikiUrl = `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${wikiQuery}`;
-
     const wikiRes = await fetch(wikiUrl);
-    if (!wikiRes.ok) throw new Error(`Wikipedia error ${wikiRes.status}`);
 
+    if (!wikiRes.ok) throw new Error(`Wikipedia error ${wikiRes.status}`);
     const wiki = await wikiRes.json();
 
     return Response.json({

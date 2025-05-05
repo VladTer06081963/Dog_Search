@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { ExternalLink } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { WikipediaModal } from "./wikipedia-modal"
-import type { DogBreed } from "@/lib/dog-api"
+import { useState } from "react";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { WikipediaModal } from "./wikipedia-modal";
+import type { DogBreed } from "@/lib/dog-api";
 
 interface DogBreedCardProps {
-  breed: DogBreed
+  breed: DogBreed;
 }
 
 export function DogBreedCard({ breed }: DogBreedCardProps) {
-  const [isWikiModalOpen, setIsWikiModalOpen] = useState(false)
+  const [isWikiModalOpen, setIsWikiModalOpen] = useState(false);
 
   return (
     <Card>
@@ -27,7 +27,8 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
               src={breed.imageUrl || "/placeholder.svg"}
               alt={
                 breed.imageUrl
-                  ? `Фото породы ${breed.name}` : "Заглушка — изображение не найдено"
+                  ? `Фото породы ${breed.name}`
+                  : "Заглушка — изображение не найдено"
               }
               fill
               className="object-cover"

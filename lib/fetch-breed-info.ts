@@ -23,14 +23,20 @@ interface BreedInfo {
 
 export async function fetchBreedInfo(
   breed: string,
-  source: "wikipedia" | "chatgpt" = "wikipedia",
+  source: "default" | "wikipedia" | "chatgpt" = "default",
   setInfoContent: Dispatch<SetStateAction<string>>,
   setBreedInfo: Dispatch<SetStateAction<BreedInfo | null>>,
   setIsLoading: Dispatch<SetStateAction<boolean>>,
-  setActiveSource: Dispatch<SetStateAction<"none" | "wikipedia" | "chatgpt">>
+  setActiveSource: Dispatch<
+    SetStateAction<"none" | "wikipedia" | "chatgpt" | "dogapi">
+  >
 ) {
   setIsLoading(true);
-  setActiveSource(source);
+  // setActiveSource(source);
+  if (source !== "default") {
+    setActiveSource(source);
+  }
+
 
   try {
     if (source === "chatgpt") {
@@ -46,6 +52,32 @@ export async function fetchBreedInfo(
       return;
     }
 
+    if (source === "wikipedia") {
+      const res = await fetch("/api/wikipedia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ breed }),
+      });
+
+      const data = await res.json();
+      if (!res.ok || data.error)
+        throw new Error(data.error || "Ошибка Википедии");
+
+      setInfoContent(data.result.text);
+      setBreedInfo((prev) => ({
+        ...(prev || {}),
+        name: data.result.title,
+        origin: "Wikipedia",
+        temperament: "",
+        lifeSpan: "",
+        description: data.result.text,
+        imageUrl: data.result.image,
+        wikiUrl: data.result.url,
+      }));
+      return;
+    }
+
+    // По умолчанию: Dog API → fallback Wikipedia
     const res = await fetch("/api/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -71,6 +103,8 @@ export async function fetchBreedInfo(
       imageUrl: result.image || null,
       wikiUrl: result.url || null,
     });
+
+    setActiveSource(data.source);
   } catch (error) {
     console.error("Ошибка получения информации:", error);
     setInfoContent(`Ошибка: ${(error as Error).message}`);

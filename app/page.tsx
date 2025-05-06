@@ -12,6 +12,7 @@ import { getRandomDogBreed, searchDogBreed } from "@/lib/dog-api";
 import { fetchBreedInfo } from "@/lib/fetch-breed-info";
 import { BreedDirectory } from "@/components/BreedDirectory";
 
+
 export default function DogBreedSearch() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBreed, setSelectedBreed] = useState("");
@@ -22,6 +23,7 @@ export default function DogBreedSearch() {
   >("none");
   const [isLoading, setIsLoading] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
+  const [showDirectory, setShowDirectory] = useState(false); // ✅ ДОБАВЬ ЭТО СЮДА
 
   const handleSearch = async () => {
     if (searchQuery.trim()) {
@@ -157,13 +159,35 @@ export default function DogBreedSearch() {
               </TabsList>
 
               {/* Вкладка Поиск — здесь нужно вставить каталог пород */}
-              <TabsContent value="search" className="p-4">
+              {/* <TabsContent value="search" className="p-4">
                 <BreedDirectory
                   onSelect={(breedName) => {
                     setSearchQuery(breedName);
                     handleSearch();
                   }}
                 />
+              </TabsContent> */}
+
+              <TabsContent value="search" className="p-4 space-y-4">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => setShowDirectory((prev) => !prev)}
+                >
+                  {showDirectory
+                    ? "Скрыть каталог пород"
+                    : "Показать каталог пород"}
+                </Button>
+
+                {showDirectory && (
+                  <BreedDirectory
+                    onSelect={(breedName) => {
+                      setSearchQuery(breedName);
+                      handleSearch();
+                    }}
+                  />
+                )}
               </TabsContent>
 
               <TabsContent value="chatgpt" className="p-4">

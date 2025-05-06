@@ -15,15 +15,6 @@ export interface DogBreed {
 
 // Update the dogBreeds array to include image URLs
 const dogBreeds: DogBreed[] = [
-  // {
-  //   name: "Лабрадор",
-  //   origin: "Канада",
-  //   temperament: "Дружелюбный, активный, общительный",
-  //   lifeSpan: "10-12 лет",
-  //   description:
-  //     "Лабрадор-ретривер — порода собак, выведенная в Великобритании. Первоначально использовалась как рабочая собака рыбаков, помогая вытягивать сети и ловить рыбу.",
-  //   imageUrl: "/placeholder.svg?height=300&width=400&text=Лабрадор",
-  // },
   {
     name: "Немецкая овчарка",
     origin: "Германия",

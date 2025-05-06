@@ -11,7 +11,7 @@ import { DogBreedCard } from "@/components/dog-breed-card";
 import { getRandomDogBreed, searchDogBreed } from "@/lib/dog-api";
 import { fetchBreedInfo } from "@/lib/fetch-breed-info";
 import { BreedDirectory } from "@/components/BreedDirectory";
-
+import { PawPrint } from "lucide-react";
 
 export default function DogBreedSearch() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -75,8 +75,20 @@ export default function DogBreedSearch() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-white border-b p-4">
+      {/* <header className="bg-white border-b p-4">
         <h1 className="text-2xl font-bold text-center">Поиск пород собак</h1>
+        <h3 className="text-xl font-bold text-center">Узнай все о своем любимце</h3>
+      </header> */}
+      <header className="bg-white border-b p-4">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold inline-flex items-center justify-center gap-2">
+            <PawPrint className="w-6 h-6 text-blue-600" />
+            Поиск пород собак
+          </h1>
+          <h3 className="text-xl font-bold text-center text-gray-700 mt-1">
+            Узнай всё о своём любимце 🐾
+          </h3>
+        </div>
       </header>
 
       <main className="flex flex-1 overflow-hidden">
@@ -157,16 +169,6 @@ export default function DogBreedSearch() {
                 <TabsTrigger value="chatgpt">ChatGPT</TabsTrigger>
                 <TabsTrigger value="wikipedia">Википедия</TabsTrigger>
               </TabsList>
-
-              {/* Вкладка Поиск — здесь нужно вставить каталог пород */}
-              {/* <TabsContent value="search" className="p-4">
-                <BreedDirectory
-                  onSelect={(breedName) => {
-                    setSearchQuery(breedName);
-                    handleSearch();
-                  }}
-                />
-              </TabsContent> */}
 
               <TabsContent value="search" className="p-4 space-y-4">
                 <Button
@@ -255,7 +257,8 @@ export default function DogBreedSearch() {
               <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
                 🐶 Введите название породы или выберите из{" "}
                 <strong>каталога</strong>. <br />
-                🐕 Нажмите <strong>Поиск</strong> или выберите{" "}
+                <strong>каталог пород</strong>. 🐕 Нажмите{" "}
+                <strong>Поиск</strong> или выберите{" "}
                 <strong>Случайную породу</strong>.<br />
                 📚 Хотите больше информации? Спросите <strong>
                   Википедию

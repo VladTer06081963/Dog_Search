@@ -20,12 +20,13 @@ export default function DogBreedSearch() {
   const [infoContent, setInfoContent] = useState("");
   const [activeSource, setActiveSource] = useState<
     "none" | "wikipedia" | "chatgpt" | "dogapi"
-    >("none");
-  
+  >("none");
+
   const [isLoading, setIsLoading] = useState(false);
   const [showDirectory, setShowDirectory] = useState(false); // ✅ ДОБАВЬ ЭТО СЮДА
   const [hasSearched, setHasSearched] = useState(false);
-
+  // const [wikiLang, setWikiLang] = useState<"ru" | "uk" | "en">("uk");
+  const [wikiLang, setWikiLang] = useState<"ru" | "uk" | "en">("en");
 
   const handleSearch = async () => {
     if (searchQuery.trim()) {
@@ -43,7 +44,6 @@ export default function DogBreedSearch() {
           setActiveSource
         );
         setHasSearched(true);
-
       } catch (err) {
         console.error("Ошибка поиска породы:", err);
       } finally {
@@ -69,7 +69,6 @@ export default function DogBreedSearch() {
         setActiveSource
       );
       setHasSearched(true);
-
     } catch (error) {
       console.error("Ошибка случайной породы:", error);
     } finally {
@@ -216,7 +215,52 @@ export default function DogBreedSearch() {
                 </Button>
               </TabsContent>
 
-              <TabsContent value="wikipedia" className="p-4">
+              <TabsContent value="wikipedia" className="p-4 space-y-3">
+                {/* 3.1 Селектор языка */}
+                <div className="flex items-center gap-2">
+                  <label htmlFor="wiki-lang-mobile" className="text-sm">
+                    Язык:
+                  </label>
+                  <select
+                    id="wiki-lang-mobile"
+                    value={wikiLang}
+                    onChange={(e) => setWikiLang(e.target.value as any)}
+                    className="border rounded px-2 py-1 text-sm flex-1"
+                  >
+                    <option value="uk">Українська</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+
+                {/* 3.2 Кнопка */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  disabled={
+                    !selectedBreed ||
+                    (activeSource === "wikipedia" && isLoading)
+                  }
+                  onClick={() =>
+                    fetchBreedInfo(
+                      selectedBreed,
+                      "wikipedia",
+                      setInfoContent,
+                      setBreedInfo,
+                      setIsLoading,
+                      setActiveSource,
+                      wikiLang // ← прокидываем тот же язык
+                    )
+                  }
+                >
+                  {isLoading && activeSource === "wikipedia"
+                    ? "Загрузка..."
+                    : "Спросить Википедию"}
+                </Button>
+              </TabsContent>
+
+              {/* <TabsContent value="wikipedia" className="p-4">
                 <Button
                   variant="outline"
                   size="sm"
@@ -240,7 +284,7 @@ export default function DogBreedSearch() {
                     ? "Загрузка..."
                     : "Спросить Википедию"}
                 </Button>
-              </TabsContent>
+              </TabsContent> */}
             </Tabs>
           </div>
 
@@ -254,17 +298,42 @@ export default function DogBreedSearch() {
               <p className="text-center text-gray-500">Порода не найдена.</p>
             ) : (
               <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
-                🐶 Введите название породы или выберите из{" "}
-                <strong>каталога</strong>. <br />
-                <strong>каталог пород</strong>. 🐕 Нажмите{" "}
-                <strong>Поиск</strong> или выберите{" "}
-                <strong>Случайную породу</strong>.<br />
-                📚 Хотите больше информации? Спросите <strong>
-                  Википедию
-                </strong>{" "}
-                или 🤖 <strong>ChatGPT</strong> — просто нажмите соответствующую
-                кнопку!
+                🐶 Введите породу или выберите из <strong>каталога</strong> и
+                нажмите <strong>Поиск</strong>.<br />
+                📚 Для <strong>Википедии</strong> выберите язык в селекторе (🇬🇧
+                English по умолчанию, <strong>Русский</strong>, 🇺🇦
+                Українська)&nbsp;— язык запроса <strong>ДОЛЖЕН</strong> \
+                соответствовать выбранной версии. Нажмите «Спросить Википедию».
+                <br />
+                🤖 Чтобы дополнительно узнать о породе, а также получить названия в украинской или
+                русской Википедии, нажмите <strong>спросить ChatGPT</strong>.
               </p>
+
+              // <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
+              //   🐶 Введите породу или выберите из <strong>каталога</strong> и
+              //   нажмите <strong>Поиск</strong>.<br />
+              //   📚 Для <strong>Википедии</strong> выберите язык в селекторе (🇬🇧
+              //   English по умолчанию, <strong>Русский</strong>, 🇺🇦 Українська) и
+              //   нажмите кнопку «Спросить Википедию».
+              //   <br />
+              //   🤖 Хотите узнать о породе и получить названия в Украинской и
+              //   Русской Википедии — нажмите <strong>ChatGPT</strong>, он выдаст
+              //   информацию о 🐕 питомце и их вероятное название в{" "}
+              //   <strong>Кириллице</strong>».
+              // </p>
+
+              // <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
+              //   🐶 Введите название породы или выберите из{" "}
+              //   <strong>каталога</strong>. <br />
+              //   <strong>каталог пород</strong>. 🐕 Нажмите{" "}
+              //   <strong>Поиск</strong> или выберите{" "}
+              //   <strong>Случайную породу</strong>.<br />
+              //   📚 Хотите больше информации? Спросите <strong>
+              //     Википедию
+              //   </strong>{" "}
+              //   или 🤖 <strong>ChatGPT</strong> — просто нажмите соответствующую
+              //   кнопку!
+              // </p>
             )}
           </div>
         </div>
@@ -272,7 +341,7 @@ export default function DogBreedSearch() {
         {/* Правая панель (только на десктопе) */}
         <aside className="w-64 bg-white border-l p-4 hidden md:flex flex-col gap-6">
           {/* Википедия */}
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle className="text-sm font-medium flex items-center">
                 <BookOpen className="h-4 w-4 mr-2" />
@@ -295,6 +364,58 @@ export default function DogBreedSearch() {
                     setBreedInfo,
                     setIsLoading,
                     setActiveSource
+                  )
+                }
+              >
+                {isLoading && activeSource === "wikipedia"
+                  ? "Загрузка..."
+                  : "Спросить Википедию"}
+              </Button>
+            </CardContent>
+          </Card> */}
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-sm font-medium flex items-center">
+                <BookOpen className="h-4 w-4 mr-2" />
+                Спросить Википедию
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {/* 2.1 Селектор языка */}
+              <div className="flex items-center gap-2">
+                <label htmlFor="wiki-lang" className="text-xs">
+                  Язык:
+                </label>
+                <select
+                  id="wiki-lang"
+                  value={wikiLang}
+                  onChange={(e) => setWikiLang(e.target.value as any)}
+                  className="border rounded px-2 py-1 text-xs"
+                >
+                  <option value="uk">Українська</option>
+                  <option value="ru">Русский</option>
+                  <option value="en">English</option>
+                </select>
+              </div>
+
+              {/* 2.2 Кнопка */}
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full"
+                disabled={
+                  !selectedBreed || (activeSource === "wikipedia" && isLoading)
+                }
+                onClick={() =>
+                  fetchBreedInfo(
+                    selectedBreed,
+                    "wikipedia",
+                    setInfoContent,
+                    setBreedInfo,
+                    setIsLoading,
+                    setActiveSource,
+                    wikiLang // ← прокидываем выбранный язык
                   )
                 }
               >

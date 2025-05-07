@@ -29,14 +29,14 @@ export async function fetchBreedInfo(
   setIsLoading: Dispatch<SetStateAction<boolean>>,
   setActiveSource: Dispatch<
     SetStateAction<"none" | "wikipedia" | "chatgpt" | "dogapi">
-  >
+  >,
+  lang: string = "en" // ← новый параметр (дефолт "ru")
 ) {
   setIsLoading(true);
   // setActiveSource(source);
   if (source !== "default") {
     setActiveSource(source);
   }
-
 
   try {
     if (source === "chatgpt") {
@@ -56,7 +56,8 @@ export async function fetchBreedInfo(
       const res = await fetch("/api/wikipedia", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ breed }),
+        // body: JSON.stringify({ breed }),
+        body: JSON.stringify({ breed, lang }), // ← добавили lang
       });
 
       const data = await res.json();

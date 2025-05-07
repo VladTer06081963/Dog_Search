@@ -20,14 +20,15 @@ export default function DogBreedSearch() {
   const [infoContent, setInfoContent] = useState("");
   const [activeSource, setActiveSource] = useState<
     "none" | "wikipedia" | "chatgpt" | "dogapi"
-  >("none");
+    >("none");
+  
   const [isLoading, setIsLoading] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
   const [showDirectory, setShowDirectory] = useState(false); // ✅ ДОБАВЬ ЭТО СЮДА
+  const [hasSearched, setHasSearched] = useState(false);
+
 
   const handleSearch = async () => {
     if (searchQuery.trim()) {
-      setIsSearching(true);
       setSelectedBreed(searchQuery);
       setInfoContent("");
       setActiveSource("none");
@@ -41,16 +42,17 @@ export default function DogBreedSearch() {
           setIsLoading,
           setActiveSource
         );
+        setHasSearched(true);
+
       } catch (err) {
         console.error("Ошибка поиска породы:", err);
       } finally {
-        setIsSearching(false);
       }
     }
   };
 
   const handleRandomBreed = async () => {
-    setIsSearching(true);
+    setIsLoading(true);
     setInfoContent("");
     setActiveSource("none");
 
@@ -66,19 +68,16 @@ export default function DogBreedSearch() {
         setIsLoading,
         setActiveSource
       );
+      setHasSearched(true);
+
     } catch (error) {
       console.error("Ошибка случайной породы:", error);
     } finally {
-      setIsSearching(false);
     }
   };
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* <header className="bg-white border-b p-4">
-        <h1 className="text-2xl font-bold text-center">Поиск пород собак</h1>
-        <h3 className="text-xl font-bold text-center">Узнай все о своем любимце</h3>
-      </header> */}
       <header className="bg-white border-b p-4">
         <div className="text-center">
           <h1 className="text-2xl font-bold inline-flex items-center justify-center gap-2">
@@ -143,7 +142,7 @@ export default function DogBreedSearch() {
               <div className="flex gap-2 justify-between">
                 <Button
                   onClick={handleSearch}
-                  disabled={isSearching}
+                  disabled={isLoading}
                   className="flex-1"
                 >
                   <Search className="h-4 w-4 mr-2" />
@@ -152,7 +151,7 @@ export default function DogBreedSearch() {
                 <Button
                   variant="outline"
                   onClick={handleRandomBreed}
-                  disabled={isSearching}
+                  disabled={isLoading}
                   className="flex-1"
                 >
                   Случайная порода
@@ -247,11 +246,11 @@ export default function DogBreedSearch() {
 
           {/* Карточка результата */}
           <div className="flex-1 p-4 overflow-auto">
-            {isSearching ? (
+            {isLoading ? (
               <p className="text-center text-gray-500">Поиск породы...</p>
             ) : breedInfo ? (
               <DogBreedCard breed={breedInfo} />
-            ) : selectedBreed ? (
+            ) : hasSearched ? (
               <p className="text-center text-gray-500">Порода не найдена.</p>
             ) : (
               <p className="text-center text-gray-500 text-sm max-w-md mx-auto">

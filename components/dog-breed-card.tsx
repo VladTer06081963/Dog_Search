@@ -39,7 +39,7 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
 
         <div className="space-y-2">
           <p>
-            <span className="font-semibold">Происхождение:</span> {breed.origin}
+            <span className="font-semibold">Источник:</span> {breed.origin}
           </p>
           <p>
             <span className="font-semibold">Темперамент:</span>{" "}

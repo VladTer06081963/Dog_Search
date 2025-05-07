@@ -23,9 +23,8 @@ export default function DogBreedSearch() {
   >("none");
 
   const [isLoading, setIsLoading] = useState(false);
-  const [showDirectory, setShowDirectory] = useState(false); // ✅ ДОБАВЬ ЭТО СЮДА
+  const [showDirectory, setShowDirectory] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
-  // const [wikiLang, setWikiLang] = useState<"ru" | "uk" | "en">("uk");
   const [wikiLang, setWikiLang] = useState<"ru" | "uk" | "en">("en");
 
   const handleSearch = async () => {
@@ -259,32 +258,6 @@ export default function DogBreedSearch() {
                     : "Спросить Википедию"}
                 </Button>
               </TabsContent>
-
-              {/* <TabsContent value="wikipedia" className="p-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full"
-                  disabled={
-                    !selectedBreed ||
-                    (activeSource === "wikipedia" && isLoading)
-                  }
-                  onClick={() =>
-                    fetchBreedInfo(
-                      selectedBreed,
-                      "wikipedia",
-                      setInfoContent,
-                      setBreedInfo,
-                      setIsLoading,
-                      setActiveSource
-                    )
-                  }
-                >
-                  {isLoading && activeSource === "wikipedia"
-                    ? "Загрузка..."
-                    : "Спросить Википедию"}
-                </Button>
-              </TabsContent> */}
             </Tabs>
           </div>
 
@@ -301,39 +274,14 @@ export default function DogBreedSearch() {
                 🐶 Введите породу или выберите из <strong>каталога</strong> и
                 нажмите <strong>Поиск</strong>.<br />
                 📚 Для <strong>Википедии</strong> выберите язык в селекторе (🇬🇧
-                English по умолчанию, <strong>Русский</strong>, 🇺🇦
-                Українська)&nbsp;— язык запроса <strong>ДОЛЖЕН</strong> \
+                English по умолчанию, <strong>Українська</strong>, 🇺🇦
+                россійська)&nbsp;— язык запроса <strong>ДОЛЖЕН</strong> \
                 соответствовать выбранной версии. Нажмите «Спросить Википедию».
                 <br />
-                🤖 Чтобы дополнительно узнать о породе, а также получить названия в украинской или
-                русской Википедии, нажмите <strong>спросить ChatGPT</strong>.
+                🤖 Чтобы дополнительно узнать о породе, а также получить
+                названия в украинской или русской Википедии, нажмите{" "}
+                <strong>спросить ChatGPT</strong>.
               </p>
-
-              // <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
-              //   🐶 Введите породу или выберите из <strong>каталога</strong> и
-              //   нажмите <strong>Поиск</strong>.<br />
-              //   📚 Для <strong>Википедии</strong> выберите язык в селекторе (🇬🇧
-              //   English по умолчанию, <strong>Русский</strong>, 🇺🇦 Українська) и
-              //   нажмите кнопку «Спросить Википедию».
-              //   <br />
-              //   🤖 Хотите узнать о породе и получить названия в Украинской и
-              //   Русской Википедии — нажмите <strong>ChatGPT</strong>, он выдаст
-              //   информацию о 🐕 питомце и их вероятное название в{" "}
-              //   <strong>Кириллице</strong>».
-              // </p>
-
-              // <p className="text-center text-gray-500 text-sm max-w-md mx-auto">
-              //   🐶 Введите название породы или выберите из{" "}
-              //   <strong>каталога</strong>. <br />
-              //   <strong>каталог пород</strong>. 🐕 Нажмите{" "}
-              //   <strong>Поиск</strong> или выберите{" "}
-              //   <strong>Случайную породу</strong>.<br />
-              //   📚 Хотите больше информации? Спросите <strong>
-              //     Википедию
-              //   </strong>{" "}
-              //   или 🤖 <strong>ChatGPT</strong> — просто нажмите соответствующую
-              //   кнопку!
-              // </p>
             )}
           </div>
         </div>
@@ -341,39 +289,6 @@ export default function DogBreedSearch() {
         {/* Правая панель (только на десктопе) */}
         <aside className="w-64 bg-white border-l p-4 hidden md:flex flex-col gap-6">
           {/* Википедия */}
-          {/* <Card>
-            <CardHeader>
-              <CardTitle className="text-sm font-medium flex items-center">
-                <BookOpen className="h-4 w-4 mr-2" />
-                Спросить Википедию
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full"
-                disabled={
-                  !selectedBreed || (activeSource === "wikipedia" && isLoading)
-                }
-                onClick={() =>
-                  fetchBreedInfo(
-                    selectedBreed,
-                    "wikipedia",
-                    setInfoContent,
-                    setBreedInfo,
-                    setIsLoading,
-                    setActiveSource
-                  )
-                }
-              >
-                {isLoading && activeSource === "wikipedia"
-                  ? "Загрузка..."
-                  : "Спросить Википедию"}
-              </Button>
-            </CardContent>
-          </Card> */}
-
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-medium flex items-center">

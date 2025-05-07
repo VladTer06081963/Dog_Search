@@ -58,7 +58,7 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
             className="inline-flex items-center text-blue-600 hover:text-blue-800 p-0"
             onClick={() => setIsWikiModalOpen(true)}
           >
-            Читать полную статью на Википедии
+            Здесь будет перевод с английской Википедии
             <ExternalLink className="h-4 w-4 ml-1" />
           </Button>
         </div>

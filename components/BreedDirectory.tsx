@@ -1,17 +1,18 @@
+/** @format */
+
 "use client";
-//добавим серверный кеш /+
+
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-
-type Breed = { id: number; name: string };
+import { EnrichedBreed } from "@/types";
 
 interface BreedDirectoryProps {
   onSelect: (name: string) => void;
 }
 
 export function BreedDirectory({ onSelect }: BreedDirectoryProps) {
-  const [breeds, setBreeds] = useState<Breed[]>([]);
-  const [isLoading, setIsLoading] = useState(false); // Добавлено состояние загрузки
+  const [breeds, setBreeds] = useState<EnrichedBreed[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchBreeds = async () => {
@@ -19,8 +20,12 @@ export function BreedDirectory({ onSelect }: BreedDirectoryProps) {
       try {
         const res = await fetch("/api/breeds");
         const data = await res.json();
-        setBreeds(data);
-        console.log(setBreeds(data));
+        console.log("📥 Породы из /api/breeds:", data);
+        // Фильтруем только те объекты, у которых есть имя
+        const validBreeds = Array.isArray(data)
+          ? data.filter((b: EnrichedBreed) => b && typeof b.name === "string")
+          : [];
+        setBreeds(validBreeds);
       } catch (err) {
         console.error("Ошибка загрузки пород:", err);
       } finally {
@@ -60,7 +65,11 @@ export function BreedDirectory({ onSelect }: BreedDirectoryProps) {
             key={breed.id}
             variant="ghost"
             className="w-full justify-start text-left text-sm"
-            onClick={() => onSelect(breed.name)}
+            onClick={() => {
+              if (breed.name) {
+                onSelect(breed.name);
+              }
+            }}
           >
             {breed.name}
           </Button>

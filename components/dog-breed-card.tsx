@@ -22,7 +22,7 @@ function extractFileNameFromContent(content: string): string | null {
   const fileTag = content.match(/File:([^\]\)\n\r]+)/)?.[1];
   if (fileTag) return fileTag.trim();
 
-  const pathMatch = content.match(/\/([\w\-]+\.jpg)/i);
+  const pathMatch = content.match(/\/([\w\-]+\.(jpg|jpeg|png))/i);
   if (pathMatch) return pathMatch[1];
 
   return null;
@@ -36,17 +36,16 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
 
   const contentToRender = breed.markdownContent || breed.description || "";
   const extractedFileName = extractFileNameFromContent(contentToRender);
+  const containsMarkdownImage = /!\[.*?\]\((.*?)\)/.test(contentToRender);
 
   useEffect(() => {
     let isMounted = true;
 
-    // 🛑 Не загружаем изображение, если оно уже есть в Markdown
-    const containsMarkdownImage = /!\[.*?\]\((.*?)\)/.test(contentToRender);
     if (containsMarkdownImage) {
       console.log(
         "⛔ Пропускаем загрузку imageUrl — есть изображение в Markdown"
       );
-      return;
+      return () => {};
     }
 
     async function resolveImage() {
@@ -75,7 +74,7 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
     return () => {
       isMounted = false;
     };
-  }, [breed.imageUrl, extractedFileName, contentToRender]);
+  }, [breed.imageUrl, extractedFileName, containsMarkdownImage]);
 
   return (
     <Card className="w-full shadow-md">
@@ -87,15 +86,18 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
       </CardHeader>
 
       <CardContent className="space-y-4">
-        {/* Показываем изображение, только если оно не встроено в Markdown */}
-        {resolvedImageUrl && (
+        {!containsMarkdownImage && resolvedImageUrl && (
           <div className="relative w-full h-64 overflow-hidden rounded-md">
             <img
               src={resolvedImageUrl}
               alt={breed.name}
               className="w-full h-full object-cover"
               onError={(e) => {
-                (e.target as HTMLImageElement).style.display = "none";
+                console.warn(
+                  "🚫 Ошибка загрузки основного изображения:",
+                  e.currentTarget.src
+                );
+                e.currentTarget.src = "/placeholder.svg";
               }}
             />
           </div>
@@ -116,13 +118,45 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
                   />
                 ),
                 p: ({ node, ...props }) => <p className="text-sm" {...props} />,
-                img: ({ node, ...props }) => (
-                  <img
-                    {...props}
-                    className="rounded-md max-w-full h-auto border border-gray-200 shadow-sm my-4"
-                    alt={props.alt || ""}
-                  />
-                ),
+                img: ({ node, ...props }) => {
+                  console.log("🖼️ Рендерим Markdown изображение:", props.src);
+
+                  const handleError = (
+                    e: React.SyntheticEvent<HTMLImageElement>
+                  ) => {
+                    const fallback = breed.imageUrl || "/placeholder.svg";
+
+                    if (
+                      !fallback ||
+                      props.src === fallback ||
+                      e.currentTarget.src === fallback ||
+                      e.currentTarget.src.endsWith("placeholder.svg")
+                    ) {
+                      console.warn(
+                        "♻️ Подставляем placeholder.svg — Markdown и fallback не помогли"
+                      );
+                      e.currentTarget.src = "/placeholder.svg";
+                      return;
+                    }
+
+                    console.warn(
+                      "🚫 Markdown img error:",
+                      props.src,
+                      "→ fallback:",
+                      fallback
+                    );
+                    e.currentTarget.src = fallback;
+                  };
+
+                  return (
+                    <img
+                      {...props}
+                      onError={handleError}
+                      className="rounded-md max-w-full h-auto border border-gray-200 shadow-sm my-4"
+                      alt={props.alt || ""}
+                    />
+                  );
+                },
               }}
             >
               {contentToRender}

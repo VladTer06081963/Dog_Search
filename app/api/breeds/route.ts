@@ -5,6 +5,8 @@ import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 import crypto from "crypto";
+import { EnrichedBreed } from "@/types";
+
 
 // Конфигурация кеширования
 const CACHE_FILE = path.join(process.cwd(), "data", "dog_breeds_cache.json");
@@ -27,20 +29,20 @@ interface Breed {
   description?: string;
 }
 
-interface EnrichedBreed {
-  id: number;
-  name: string;
-  description: string;
-  temperament: string;
-  life_span: string;
-  origin: string;
-  weight: string;
-  height: string;
-  bred_for: string;
-  breed_group: string;
-  image_url: string;
-  wikipedia_url: string;
-}
+// interface EnrichedBreed {
+//   id: number;
+//   name: string;
+//   description: string;
+//   temperament: string;
+//   life_span: string;
+//   origin: string;
+//   weight: string;
+//   height: string;
+//   bred_for: string;
+//   breed_group: string;
+//   image_url: string;
+//   wikipedia_url: string;
+// }
 
 interface CacheData {
   timestamp: number;
@@ -68,9 +70,13 @@ async function fetchAllBreeds(): Promise<Breed[]> {
 }
 
 async function enrichBreed(breed: Breed): Promise<EnrichedBreed> {
+  // const imageUrl = breed.reference_image_id
+  //   ? `${DOG_API_URL}/images/${breed.reference_image_id}`
+  //   : `${DOG_API_URL}/images/dog-placeholder.jpg`;
   const imageUrl = breed.reference_image_id
-    ? `${DOG_API_URL}/images/${breed.reference_image_id}`
-    : `${DOG_API_URL}/images/dog-placeholder.jpg`;
+    ? `https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`
+    : "/placeholder.svg";
+
 
   return {
     id: breed.id,
@@ -108,7 +114,8 @@ async function fetchAndCacheBreeds(
     const newCache: CacheData = {
       timestamp: Date.now(),
       dataHash: currentHash,
-      breeds: enrichedBreeds.filter((b) => b.image_url),
+      // breeds: enrichedBreeds.filter((b) => b.image_url),
+      breeds: enrichedBreeds.filter((b) => b.image_url && b.name),
     };
 
     await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });

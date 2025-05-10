@@ -2,15 +2,6 @@
 
 import { Dispatch, SetStateAction } from "react";
 
-interface BreedInfoResult {
-  title: string;
-  text: string;
-  temperament?: string;
-  lifeSpan?: string;
-  image?: string;
-  url?: string;
-}
-
 interface BreedInfo {
   name: string;
   origin: string;
@@ -19,9 +10,8 @@ interface BreedInfo {
   description: string;
   imageUrl: string | null;
   wikiUrl?: string | null;
-  rawContent?: string; // Добавляем новое поле
-  markdownContent?: string; // Добавляем поле для форматированного Markdown-контента
-  isMarkdown?: boolean;     // Флаг, указывающий, что content содержит Markdown
+  markdownContent?: string;
+  isMarkdown?: boolean;
 }
 
 export async function fetchBreedInfo(
@@ -36,95 +26,67 @@ export async function fetchBreedInfo(
   lang: string = "en"
 ) {
   setIsLoading(true);
-
-  if (!setInfoContent || !setBreedInfo) {
-    throw new Error("Missing required setState functions");
-  }
-
   if (source !== "default") {
     setActiveSource(source);
   }
 
+  // setActiveSource(source);
+
   try {
     if (source === "chatgpt") {
-  const response = await fetch("/api/chatgpt", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ breed }),
-  });
-  const data = await response.json();
-  
-  if (!response.ok) throw new Error(data.error || "Ошибка ChatGPT");
+      const response = await fetch("/api/chatgpt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ breed }),
+      });
 
-  // Улучшенное извлечение изображения
-  const extractImage = (content: string) => {
-    // Пытаемся найти markdown-изображение
-    const mdMatch = content.match(/!\[.*?\]\((.*?)\)/);
-    if (mdMatch && mdMatch[1].startsWith('http')) return mdMatch[1];
-    
-    // Ищем название файла в формате "Файл:Название.jpg"
-    const fileMatch = content.match(/Файл:\s*(.*?\.(jpg|jpeg|png|gif))/i);
-    if (fileMatch) {
-      return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileMatch[1])}?width=300`;
+      const data = await response.json();
+      if (!response.ok || data.error)
+        throw new Error(data.error || "Ошибка ChatGPT");
+
+      setBreedInfo({
+        name: breed,
+        origin: "ChatGPT",
+        description: data.markdown,
+        markdownContent: data.markdown,
+        isMarkdown: true,
+        imageUrl: data.imageUrl || null,
+        temperament: "",
+        lifeSpan: "",
+        wikiUrl: null,
+      });
+
+      setInfoContent(data.markdown);
+      return;
     }
-    return null;
-  };
-
-  const imageUrl = extractImage(data.result);
-
-  setBreedInfo((prev) => ({
-    ...(prev || {
-      name: "",
-      origin: "",
-      temperament: "",
-      lifeSpan: "",
-      description: "",
-      imageUrl: null,
-      wikiUrl: null,
-    }),
-    name: breed,
-    origin: "ChatGPT",
-    description: data.result,
-    // markdownContent: data.result,
-    markdownContent: data.result, // Явно указываем markdown-контент
-    isMarkdown: true,
-    imageUrl: imageUrl,
-  }));
-  
-  setInfoContent(data.result);
-  return;
-    }
-
-    // ... остальной код без изменений ...
 
     if (source === "wikipedia") {
       const res = await fetch("/api/wikipedia", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // body: JSON.stringify({ breed }),
-        body: JSON.stringify({ breed, lang }), // ← добавили lang
+        body: JSON.stringify({ breed, lang }),
       });
 
       const data = await res.json();
       if (!res.ok || data.error)
         throw new Error(data.error || "Ошибка Википедии");
 
-      setInfoContent(data.result.text);
-      setBreedInfo((prev) => ({
-        ...(prev || {}),
+      setBreedInfo({
         name: data.result.title,
         origin: "Wikipedia",
+        description: data.result.text,
+        imageUrl: data.result.image || null,
         temperament: "",
         lifeSpan: "",
-        description: data.result.text,
-        imageUrl: data.result.image,
-        wikiUrl: data.result.url,
-        isMarkdown: false, // Контент из Wikipedia не в формате Markdown
-      }));
+        wikiUrl: data.result.url || null,
+        isMarkdown: false,
+      });
+
+      setInfoContent(data.result.text);
       return;
     }
 
-    // По умолчанию: Dog API → fallback Wikipedia
+    // fallback: Dog API + wiki
     const res = await fetch("/api/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -132,26 +94,24 @@ export async function fetchBreedInfo(
     });
 
     const data = await res.json();
-    if (!res.ok || data.error) throw new Error(data.error || "Ошибка API");
+    if (!res.ok || data.error) throw new Error(data.error || "Ошибка поиска");
 
     if (!data.result?.text) {
       throw new Error("Описание не найдено ни в Dog API, ни в Википедии.");
     }
 
-    const result: BreedInfoResult = data.result;
-
-    setInfoContent(result.text);
     setBreedInfo({
-      name: result.title,
+      name: data.result.title,
       origin: data.source === "dogapi" ? "Dog API" : "Wikipedia",
-      temperament: result.temperament || "",
-      lifeSpan: result.lifeSpan || "",
-      description: result.text,
-      imageUrl: result.image || null,
-      wikiUrl: result.url || null,
-      isMarkdown: false,  // Текст из Dog API не в формате Markdown
+      description: data.result.text,
+      imageUrl: data.result.image || null,
+      temperament: data.result.temperament || "",
+      lifeSpan: data.result.lifeSpan || "",
+      wikiUrl: data.result.url || null,
+      isMarkdown: false,
     });
 
+    setInfoContent(data.result.text);
     setActiveSource(data.source);
   } catch (error) {
     console.error("Ошибка получения информации:", error);

@@ -13,6 +13,7 @@ import { fetchBreedInfo } from "@/lib/fetch-breed-info";
 import { BreedDirectory } from "@/components/BreedDirectory";
 import { PawPrint } from "lucide-react";
 
+
 export default function DogBreedSearch() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBreed, setSelectedBreed] = useState("");
@@ -72,6 +73,32 @@ export default function DogBreedSearch() {
       console.error("Ошибка случайной породы:", error);
     } finally {
     }
+  };
+
+  // Добавляем эту функцию mcdown где-нибудь в вашем компоненте
+  const renderWithLinks = (text: string) => {
+    return text.split("\n").map((paragraph, i) => (
+      <p key={i} className="mb-2">
+        {paragraph.split(" ").map((word, j) => {
+          // Ищем markdown-ссылки вида [текст](URL)
+          const match = word.match(/\[(.*?)\]\((.*?)\)/);
+          if (match) {
+            return (
+              <a
+                key={j}
+                href={match[2]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                {match[1]}{" "}
+              </a>
+            );
+          }
+          return <span key={j}>{word} </span>;
+        })}
+      </p>
+    ));
   };
 
   return (
@@ -265,7 +292,9 @@ export default function DogBreedSearch() {
           <div className="flex-1 p-4 overflow-auto">
             {isLoading ? (
               <p className="text-center text-gray-500">Поиск породы...</p>
+              
             ) : breedInfo ? (
+                
               <DogBreedCard breed={breedInfo} />
             ) : hasSearched ? (
               <p className="text-center text-gray-500">Порода не найдена.</p>
@@ -341,6 +370,7 @@ export default function DogBreedSearch() {
             </CardContent>
           </Card>
 
+      
           {/* Каталог пород */}
           <BreedDirectory
             onSelect={(breedName) => {
@@ -348,6 +378,7 @@ export default function DogBreedSearch() {
               setSelectedBreed(breedName);
               fetchBreedInfo(
                 breedName,
+                // "chatgpt", // Используем ChatGPT как источник
                 "default",
                 setInfoContent,
                 setBreedInfo,
@@ -372,14 +403,34 @@ export default function DogBreedSearch() {
                   (Источник: {activeSource})
                 </span>
               </h3>
-              <p className="text-sm whitespace-pre-line">{infoContent}</p>
+
+              {activeSource === "chatgpt" ? (
+                <div className="text-sm [&>p]:mb-2">
+                  {infoContent.split("\n").map((paragraph, i) => {
+                    // Обрабатываем markdown-ссылки в каждом параграфе
+                    const processedParagraph = paragraph.replace(
+                      /\[(.*?)\]\((.*?)\)/g,
+                      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>'
+                    );
+
+                    return (
+                      <p
+                        key={i}
+                        dangerouslySetInnerHTML={{ __html: processedParagraph }}
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <p className="text-sm whitespace-pre-line">{infoContent}</p>
+              )}
             </div>
           ) : breedInfo ? (
             <p className="text-center text-gray-500">
               Выберите источник информации
             </p>
           ) : (
-            <p className="text-center text-gray-500">Введите породу</p>
+            <p className="text-center text-gray-500">Найди своего любимца</p>
           )}
         </div>
       </footer>

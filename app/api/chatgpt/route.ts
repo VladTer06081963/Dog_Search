@@ -25,9 +25,20 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid breed name" }, { status: 400 });
   }
 
-  // 3. Запрос к OpenAI с таймаутом
+  // 3. Улучшенный промт для GPT
+  const gptPrompt = `Предоставь информацию о породе собак "${breed}" в формате Markdown. Включи:
+1. Краткое описание породы (3-5 предложений)
+2. Основные черты характера и темперамента
+3. Среднюю продолжительность жизни
+4. Кликабельные ссылки на статьи в Википедии:
+   - [Русская версия](https://ru.wikipedia.org/wiki/...)
+   - [Украинская версия](https://uk.wikipedia.org/wiki/...)
+5. Ссылку на изображение породы из Википедии в формате: ![${breed}](URL_изображения)
+Если информация не найдена, напиши "Данные по породе ${breed} не найдены"`;
+
+  // 4. Запрос к OpenAI с таймаутом
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000);
+  const timeout = setTimeout(() => controller.abort(), 15000); // Увеличил таймаут
 
   try {
     const res = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -38,18 +49,24 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "gpt-4.1",
+        model: "gpt-4.1", // Обновил модель
         messages: [
           {
+            role: "system",
+            content:
+              "Ты помощник, который предоставляет информацию о породах собак с ссылками на Википедию и изображениями.",
+          },
+          {
             role: "user",
-            content: `Расскажи о породе собак, найди и выдай их названия в украинской и русской Википедии. Если таких названий нет — напиши «данних по породе нет: ${breed}».`,
+            content: gptPrompt,
           },
         ],
+        response_format: { type: "text" }, // Явно указываем текстовый ответ
       }),
     });
     clearTimeout(timeout);
 
-    // 4. Обработка не-200 статусов
+    // 5. Обработка ответа
     if (!res.ok) {
       const errText = await res.text();
       console.error(`OpenAI API returned ${res.status}: ${errText}`);
@@ -59,13 +76,20 @@ export async function POST(req: Request) {
       );
     }
 
-    // 5. Успешный ответ
     const data = await res.json();
     const content = data.choices?.[0]?.message?.content || "Нет данных";
-    return NextResponse.json({ result: content });
+    // console.log(content);
+    // 6. Извлекаем URL изображения из ответа
+    const imageUrlMatch = content.match(/!\[.*?\]\((.*?)\)/);
+    const imageUrl = imageUrlMatch ? imageUrlMatch[1] : null;
+    console.log(imageUrl);
+
+    return NextResponse.json({
+      result: content,
+      imageUrl: imageUrl, // Добавляем URL изображения в ответ
+    });
   } catch (err: any) {
     clearTimeout(timeout);
-    // 6. Таймаут или другая ошибка fetch
     console.error("OpenAI fetch error:", err);
     const status = err.name === "AbortError" ? 504 : 500;
     return NextResponse.json(

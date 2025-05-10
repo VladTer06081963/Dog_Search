@@ -20,10 +20,9 @@ export async function POST(req: Request) {
     );
 
     const dogData = await dogRes.json();
-
     if (dogData.length > 0) {
       const breed = dogData[0];
-
+      
       const imageRes = await fetch(
         `https://api.thedogapi.com/v1/images/search?breed_ids=${breed.id}`,
         {
@@ -31,22 +30,23 @@ export async function POST(req: Request) {
             "x-api-key": process.env.DOG_API_KEY || "",
           },
         }
-      );
-
-      const imageData = await imageRes.json();
-
-      return Response.json({
-        source: "dogapi",
-        result: {
-          title: breed.name,
-          text: breed.bred_for || "Описание не указано",
-          temperament: breed.temperament || "",
-          lifeSpan: breed.life_span || "",
-          image: imageData[0]?.url || null,
-          url: null,
-        },
-      });
-    }
+        );
+        
+        const imageData = await imageRes.json();
+        
+         return Response.json({
+          source: "dogapi",
+          result: {
+            title: breed.name,
+            text: breed.bred_for || "Описание не указано",
+            temperament: breed.temperament || "",
+            lifeSpan: breed.life_span || "",
+            image: imageData[0]?.url || null,
+            url: null,
+          },
+        }
+        );
+      }
 
     // 2. Fallback на Википедию
     const wikiQuery = encodeURIComponent(name.replace(/ /g, "_"));

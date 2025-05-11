@@ -1,5 +1,5 @@
 {
-  "timestamp": 1746759781004,
+  "timestamp": 1746987374585,
   "dataHash": "b65e95cb3e4c07aa92ba9d0c6ff51648e06b7d8423ad4764a989f0f3f3dd6774",
   "breeds": [
     {
@@ -13,7 +13,7 @@
       "height": "23 - 29",
       "bred_for": "Small rodent hunting, lapdog",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/BJa4kxc4X",
+      "image_url": "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg",
       "wikipedia_url": ""
     },
     {
@@ -27,7 +27,7 @@
       "height": "64 - 69",
       "bred_for": "Coursing and hunting",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/hMyT4CDXR",
+      "image_url": "https://cdn2.thedogapi.com/images/hMyT4CDXR.jpg",
       "wikipedia_url": ""
     },
     {
@@ -41,7 +41,7 @@
       "height": "76",
       "bred_for": "A wild pack animal",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/rkiByec47",
+      "image_url": "https://cdn2.thedogapi.com/images/rkiByec47.jpg",
       "wikipedia_url": ""
     },
     {
@@ -55,7 +55,7 @@
       "height": "53 - 58",
       "bred_for": "Badger, otter hunting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/1-7cgoZSh",
+      "image_url": "https://cdn2.thedogapi.com/images/1-7cgoZSh.jpg",
       "wikipedia_url": ""
     },
     {
@@ -69,7 +69,7 @@
       "height": "71 - 86",
       "bred_for": "Sheep guarding",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/26pHT3Qk7",
+      "image_url": "https://cdn2.thedogapi.com/images/26pHT3Qk7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -83,7 +83,7 @@
       "height": "61 - 71",
       "bred_for": "Hunting bears",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/BFRYBufpm",
+      "image_url": "https://cdn2.thedogapi.com/images/BFRYBufpm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -97,7 +97,7 @@
       "height": "46 - 61",
       "bred_for": "Guarding",
       "breed_group": "Mixed",
-      "image_url": "https://api.thedogapi.com/v1/images/33mJ-V3RX",
+      "image_url": "https://cdn2.thedogapi.com/images/33mJ-V3RX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -111,7 +111,7 @@
       "height": "58 - 66",
       "bred_for": "Sled pulling",
       "breed_group": "Mixed",
-      "image_url": "https://api.thedogapi.com/v1/images/-HgpNnGXl",
+      "image_url": "https://cdn2.thedogapi.com/images/-HgpNnGXl.jpg",
       "wikipedia_url": ""
     },
     {
@@ -125,7 +125,7 @@
       "height": "58 - 64",
       "bred_for": "Hauling heavy freight, Sled pulling",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/dW5UucTIW",
+      "image_url": "https://cdn2.thedogapi.com/images/dW5UucTIW.jpg",
       "wikipedia_url": ""
     },
     {
@@ -139,7 +139,7 @@
       "height": "56 - 69",
       "bred_for": "Not specified",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/pk1AAdloG",
+      "image_url": "https://cdn2.thedogapi.com/images/pk1AAdloG.jpg",
       "wikipedia_url": ""
     },
     {
@@ -153,7 +153,7 @@
       "height": "36 - 43",
       "bred_for": "Family companion dog",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/sqQJDtbpY",
+      "image_url": "https://cdn2.thedogapi.com/images/sqQJDtbpY.jpg",
       "wikipedia_url": ""
     },
     {
@@ -167,7 +167,7 @@
       "height": "38 - 48",
       "bred_for": "Circus performer",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/Bymjyec4m",
+      "image_url": "https://cdn2.thedogapi.com/images/Bymjyec4m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -181,7 +181,7 @@
       "height": "23 - 30",
       "bred_for": "Companionship",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/_gn8GLrE6",
+      "image_url": "https://cdn2.thedogapi.com/images/_gn8GLrE6.jpg",
       "wikipedia_url": ""
     },
     {
@@ -195,7 +195,7 @@
       "height": "53 - 71",
       "bred_for": "Fox hunting, scent hound",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/S14n1x9NQ",
+      "image_url": "https://cdn2.thedogapi.com/images/S14n1x9NQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -209,7 +209,7 @@
       "height": "43 - 53",
       "bred_for": "Fighting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/HkC31gcNm",
+      "image_url": "https://cdn2.thedogapi.com/images/HkC31gcNm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -223,7 +223,7 @@
       "height": "43 - 48",
       "bred_for": "Not specified",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/rJIakgc4m",
+      "image_url": "https://cdn2.thedogapi.com/images/rJIakgc4m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -237,7 +237,7 @@
       "height": "38 - 46",
       "bred_for": "Bird flushing and retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SkmRJl9VQ",
+      "image_url": "https://cdn2.thedogapi.com/images/SkmRJl9VQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -251,7 +251,7 @@
       "height": "69 - 74",
       "bred_for": "Livestock herding",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/BJT0Jx5Nm",
+      "image_url": "https://cdn2.thedogapi.com/images/BJT0Jx5Nm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -265,7 +265,7 @@
       "height": "51 - 56",
       "bred_for": "Herding livestock, pulling carts, and guarding the farm",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/HkNkxlqEX",
+      "image_url": "https://cdn2.thedogapi.com/images/HkNkxlqEX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -279,7 +279,7 @@
       "height": "43 - 51",
       "bred_for": "Cattle herding, herding trials",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/IBkYVm4v1",
+      "image_url": "https://cdn2.thedogapi.com/images/IBkYVm4v1.jpg",
       "wikipedia_url": ""
     },
     {
@@ -293,7 +293,7 @@
       "height": "43 - 51",
       "bred_for": "Farm dog, Cattle herding",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/Hyq1ge9VQ",
+      "image_url": "https://cdn2.thedogapi.com/images/Hyq1ge9VQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -307,7 +307,7 @@
       "height": "46 - 58",
       "bred_for": "Sheep herding",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/B1-llgq4m",
+      "image_url": "https://cdn2.thedogapi.com/images/B1-llgq4m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -321,7 +321,7 @@
       "height": "25 - 28",
       "bred_for": "Cattle herdering, hunting snakes and rodents",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/r1Ylge5Vm",
+      "image_url": "https://cdn2.thedogapi.com/images/r1Ylge5Vm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -335,7 +335,7 @@
       "height": "58 - 74",
       "bred_for": "Livestock guardian, hunting",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/SkvZgx94m",
+      "image_url": "https://cdn2.thedogapi.com/images/SkvZgx94m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -349,7 +349,7 @@
       "height": "51 - 66",
       "bred_for": "Hunting water game",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/HyWGexcVQ",
+      "image_url": "https://cdn2.thedogapi.com/images/HyWGexcVQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -363,7 +363,7 @@
       "height": "41 - 43",
       "bred_for": "Hunting",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/H1dGlxqNQ",
+      "image_url": "https://cdn2.thedogapi.com/images/H1dGlxqNQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -377,7 +377,7 @@
       "height": "33 - 38",
       "bred_for": "Hunting on foot.",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/BkMQll94X",
+      "image_url": "https://cdn2.thedogapi.com/images/BkMQll94X.jpg",
       "wikipedia_url": ""
     },
     {
@@ -391,7 +391,7 @@
       "height": "36",
       "bred_for": "Hunting by scent",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/Sy57xx9EX",
+      "image_url": "https://cdn2.thedogapi.com/images/Sy57xx9EX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -405,7 +405,7 @@
       "height": "33 - 38",
       "bred_for": "Rabbit, hare hunting",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/Syd4xxqEm",
+      "image_url": "https://cdn2.thedogapi.com/images/Syd4xxqEm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -419,7 +419,7 @@
       "height": "51 - 56",
       "bred_for": "Sheep herding",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/A09F4c1qP",
+      "image_url": "https://cdn2.thedogapi.com/images/A09F4c1qP.jpg",
       "wikipedia_url": ""
     },
     {
@@ -433,7 +433,7 @@
       "height": "61 - 70",
       "bred_for": "Boar herding, hunting, guarding",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/HJQ8ge5V7",
+      "image_url": "https://cdn2.thedogapi.com/images/HJQ8ge5V7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -447,7 +447,7 @@
       "height": "38 - 41",
       "bred_for": "Killing rat, badger, other vermin",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/ByK8gx947",
+      "image_url": "https://cdn2.thedogapi.com/images/ByK8gx947.jpg",
       "wikipedia_url": ""
     },
     {
@@ -461,7 +461,7 @@
       "height": "56 - 66",
       "bred_for": "Stock herding",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/r1f_ll5VX",
+      "image_url": "https://cdn2.thedogapi.com/images/r1f_ll5VX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -475,7 +475,7 @@
       "height": "56 - 66",
       "bred_for": "Guarding, Drafting, Police work.",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/B1KdxlcNX",
+      "image_url": "https://cdn2.thedogapi.com/images/B1KdxlcNX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -489,7 +489,7 @@
       "height": "58 - 70",
       "bred_for": "Draft work",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/S1fFlx5Em",
+      "image_url": "https://cdn2.thedogapi.com/images/S1fFlx5Em.jpg",
       "wikipedia_url": ""
     },
     {
@@ -503,7 +503,7 @@
       "height": "24 - 29",
       "bred_for": "Companion",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/HkuYlxqEQ",
+      "image_url": "https://cdn2.thedogapi.com/images/HkuYlxqEQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -517,7 +517,7 @@
       "height": "58 - 69",
       "bred_for": "Hunting raccoons, night hunting",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/HJAFgxcNQ",
+      "image_url": "https://cdn2.thedogapi.com/images/HJAFgxcNQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -531,7 +531,7 @@
       "height": "58 - 69",
       "bred_for": "Trailing",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/Skdcgx9VX",
+      "image_url": "https://cdn2.thedogapi.com/images/Skdcgx9VX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -545,7 +545,7 @@
       "height": "53 - 69",
       "bred_for": "Hunting with a superior sense of smell.",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/rJxieg9VQ",
+      "image_url": "https://cdn2.thedogapi.com/images/rJxieg9VQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -559,7 +559,7 @@
       "height": "56 - 69",
       "bred_for": "Guarding the homestead, farm work.",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/HyOjge5Vm",
+      "image_url": "https://cdn2.thedogapi.com/images/HyOjge5Vm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -573,7 +573,7 @@
       "height": "46 - 56",
       "bred_for": "Sheep herder",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/sGQvQUpsp",
+      "image_url": "https://cdn2.thedogapi.com/images/sGQvQUpsp.jpg",
       "wikipedia_url": ""
     },
     {
@@ -587,7 +587,7 @@
       "height": "28 - 41",
       "bred_for": "Fox bolting, ratting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/HJOpge9Em",
+      "image_url": "https://cdn2.thedogapi.com/images/HJOpge9Em.jpg",
       "wikipedia_url": ""
     },
     {
@@ -601,7 +601,7 @@
       "height": "41 - 43",
       "bred_for": "Ratting, Companionship",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/rkZRggqVX",
+      "image_url": "https://cdn2.thedogapi.com/images/rkZRggqVX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -615,7 +615,7 @@
       "height": "60 - 70",
       "bred_for": "Cattle herding",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/Byd0xl5VX",
+      "image_url": "https://cdn2.thedogapi.com/images/Byd0xl5VX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -629,7 +629,7 @@
       "height": "55 - 64",
       "bred_for": "Bull-baiting, guardian",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/ry1kWe5VQ",
+      "image_url": "https://cdn2.thedogapi.com/images/ry1kWe5VQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -643,7 +643,7 @@
       "height": "36 - 46",
       "bred_for": "Turkey retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/ryHJZlcNX",
+      "image_url": "https://cdn2.thedogapi.com/images/ryHJZlcNX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -657,7 +657,7 @@
       "height": "55 - 67",
       "bred_for": "Versatile gun dog",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/S13yZg5VQ",
+      "image_url": "https://cdn2.thedogapi.com/images/S13yZg5VQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -671,7 +671,7 @@
       "height": "56 - 69",
       "bred_for": "Herding, guarding sheep",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/rkVlblcEQ",
+      "image_url": "https://cdn2.thedogapi.com/images/rkVlblcEQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -685,7 +685,7 @@
       "height": "44 - 52",
       "bred_for": "Pointing, retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/HJWZZxc4X",
+      "image_url": "https://cdn2.thedogapi.com/images/HJWZZxc4X.jpg",
       "wikipedia_url": ""
     },
     {
@@ -699,7 +699,7 @@
       "height": "53 - 56",
       "bred_for": "Bull baiting, Fighting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/VSraIEQGd",
+      "image_url": "https://cdn2.thedogapi.com/images/VSraIEQGd.jpg",
       "wikipedia_url": ""
     },
     {
@@ -713,7 +713,7 @@
       "height": "25 - 36",
       "bred_for": "An elegant man's fashion statement",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/BkKZWlcVX",
+      "image_url": "https://cdn2.thedogapi.com/images/BkKZWlcVX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -727,7 +727,7 @@
       "height": "61 - 69",
       "bred_for": "Estate guardian",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/r1ifZl5E7",
+      "image_url": "https://cdn2.thedogapi.com/images/r1ifZl5E7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -741,7 +741,7 @@
       "height": "23 - 25",
       "bred_for": "Bolting of otter, foxes, other vermin",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/Sk7Qbg9E7",
+      "image_url": "https://cdn2.thedogapi.com/images/Sk7Qbg9E7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -755,7 +755,7 @@
       "height": "60 - 70",
       "bred_for": "Companion, guard dog, and hunter",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/r15m-lc4m",
+      "image_url": "https://cdn2.thedogapi.com/images/r15m-lc4m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -769,7 +769,7 @@
       "height": "27 - 32",
       "bred_for": "Cattle droving",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/SyXN-e9NX",
+      "image_url": "https://cdn2.thedogapi.com/images/SyXN-e9NX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -783,7 +783,7 @@
       "height": "51 - 66",
       "bred_for": "Driving livestock",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/BJcNbec4X",
+      "image_url": "https://cdn2.thedogapi.com/images/BJcNbec4X.jpg",
       "wikipedia_url": ""
     },
     {
@@ -797,7 +797,7 @@
       "height": "61 - 85",
       "bred_for": "Guard dogs, defending sheep from predators, mainly wolves, jackals and bears",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/r1rrWe5Em",
+      "image_url": "https://cdn2.thedogapi.com/images/r1rrWe5Em.jpg",
       "wikipedia_url": ""
     },
     {
@@ -811,7 +811,7 @@
       "height": "30 - 33",
       "bred_for": "Flushing small birds, companion",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/HJRBbe94Q",
+      "image_url": "https://cdn2.thedogapi.com/images/HJRBbe94Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -825,7 +825,7 @@
       "height": "53 - 66",
       "bred_for": "Water Retriever",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/9BXwUeCc2",
+      "image_url": "https://cdn2.thedogapi.com/images/9BXwUeCc2.jpg",
       "wikipedia_url": ""
     },
     {
@@ -839,7 +839,7 @@
       "height": "28 - 33",
       "bred_for": "Ratting, lapdog, curio",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/B1pDZx9Nm",
+      "image_url": "https://cdn2.thedogapi.com/images/B1pDZx9Nm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -853,7 +853,7 @@
       "height": "46 - 51",
       "bred_for": "Fighting",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/B1ruWl94Q",
+      "image_url": "https://cdn2.thedogapi.com/images/B1ruWl94Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -867,7 +867,7 @@
       "height": "56 - 66",
       "bred_for": "Sled pulling",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/Sypubg54Q",
+      "image_url": "https://cdn2.thedogapi.com/images/Sypubg54Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -881,7 +881,7 @@
       "height": "43 - 51",
       "bred_for": "Guardian, cart pulling, hunting",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/ry8KWgqEQ",
+      "image_url": "https://cdn2.thedogapi.com/images/ry8KWgqEQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -895,7 +895,7 @@
       "height": "43 - 51",
       "bred_for": "Bird flushing, retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/rkeqWgq4Q",
+      "image_url": "https://cdn2.thedogapi.com/images/rkeqWgq4Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -909,7 +909,7 @@
       "height": "36 - 38",
       "bred_for": "Bird flushing, retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/1lFmrzECl",
+      "image_url": "https://cdn2.thedogapi.com/images/1lFmrzECl.jpg",
       "wikipedia_url": ""
     },
     {
@@ -923,7 +923,7 @@
       "height": "36 - 38",
       "bred_for": "Hunting the American woodcock",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/HkRcZe547",
+      "image_url": "https://cdn2.thedogapi.com/images/HkRcZe547.jpg",
       "wikipedia_url": ""
     },
     {
@@ -937,7 +937,7 @@
       "height": "23 - 28",
       "bred_for": "Accompanying ladies on long sea voyages, ratters onboard ship.",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SyviZlqNm",
+      "image_url": "https://cdn2.thedogapi.com/images/SyviZlqNm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -951,7 +951,7 @@
       "height": "48 - 58",
       "bred_for": "Carriage dog - trot alongside carriages to protect the occupants from banditry or other interference",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SkJ3blcN7",
+      "image_url": "https://cdn2.thedogapi.com/images/SkJ3blcN7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -965,7 +965,7 @@
       "height": "61 - 71",
       "bred_for": "Guardian",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/HyL3bl94Q",
+      "image_url": "https://cdn2.thedogapi.com/images/HyL3bl94Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -979,7 +979,7 @@
       "height": "60 - 69",
       "bred_for": "Big-game hunting",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/S1nhWx94Q",
+      "image_url": "https://cdn2.thedogapi.com/images/S1nhWx94Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -993,7 +993,7 @@
       "height": "56 - 62",
       "bred_for": "Farms, watchdog, guard duty",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/BkE6Wg5E7",
+      "image_url": "https://cdn2.thedogapi.com/images/BkE6Wg5E7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1007,7 +1007,7 @@
       "height": "61 - 64",
       "bred_for": "Bird setting, retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/By4A-eqVX",
+      "image_url": "https://cdn2.thedogapi.com/images/By4A-eqVX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1021,7 +1021,7 @@
       "height": "46 - 58",
       "bred_for": "Herding & guarding livestock, farm watch dog",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/H1QyMe5EQ",
+      "image_url": "https://cdn2.thedogapi.com/images/H1QyMe5EQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1035,7 +1035,7 @@
       "height": "48 - 51",
       "bred_for": "Bird flushing, retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/Hk0Jfe5VQ",
+      "image_url": "https://cdn2.thedogapi.com/images/Hk0Jfe5VQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1049,7 +1049,7 @@
       "height": "25",
       "bred_for": "Companion of kings",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/SkIgzxqNQ",
+      "image_url": "https://cdn2.thedogapi.com/images/SkIgzxqNQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1063,7 +1063,7 @@
       "height": "25 - 30",
       "bred_for": "Rat-baiting",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/SJ6eMxqEQ",
+      "image_url": "https://cdn2.thedogapi.com/images/SJ6eMxqEQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1077,7 +1077,7 @@
       "height": "52 - 60",
       "bred_for": "Companionship",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/S1VWGx9Nm",
+      "image_url": "https://cdn2.thedogapi.com/images/S1VWGx9Nm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1091,7 +1091,7 @@
       "height": "43 - 46",
       "bred_for": "Bird flushing, retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SkJfGecE7",
+      "image_url": "https://cdn2.thedogapi.com/images/SkJfGecE7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1105,7 +1105,7 @@
       "height": "41 - 53",
       "bred_for": "Herding reindeer",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/S1KMGg5Vm",
+      "image_url": "https://cdn2.thedogapi.com/images/S1KMGg5Vm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1119,7 +1119,7 @@
       "height": "39 - 51",
       "bred_for": "Hunting birds, small mammals",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/3PjHlQbkV",
+      "image_url": "https://cdn2.thedogapi.com/images/3PjHlQbkV.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1133,7 +1133,7 @@
       "height": "28 - 30",
       "bred_for": "Lapdog",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/HyWNfxc47",
+      "image_url": "https://cdn2.thedogapi.com/images/HyWNfxc47.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1147,7 +1147,7 @@
       "height": "43 - 51",
       "bred_for": "Watchdog, Hunting vermin on the farm.",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/B1u4zgqE7",
+      "image_url": "https://cdn2.thedogapi.com/images/B1u4zgqE7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1161,7 +1161,7 @@
       "height": "56 - 66",
       "bred_for": "Herding, Guard dog",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/SJyBfg5NX",
+      "image_url": "https://cdn2.thedogapi.com/images/SJyBfg5NX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1175,7 +1175,7 @@
       "height": "53 - 64",
       "bred_for": "General hunting",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SJqBMg5Nm",
+      "image_url": "https://cdn2.thedogapi.com/images/SJqBMg5Nm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1189,7 +1189,7 @@
       "height": "60 - 70",
       "bred_for": "Herding, guarding",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/H1NIzlcV7",
+      "image_url": "https://cdn2.thedogapi.com/images/H1NIzlcV7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1203,7 +1203,7 @@
       "height": "32 - 36",
       "bred_for": "Rid the home and farm of vermin, and hunt badger and fox",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/H1oLMe94m",
+      "image_url": "https://cdn2.thedogapi.com/images/H1oLMe94m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1217,7 +1217,7 @@
       "height": "55 - 61",
       "bred_for": "Retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/HJ7Pzg5EQ",
+      "image_url": "https://cdn2.thedogapi.com/images/HJ7Pzg5EQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1231,7 +1231,7 @@
       "height": "58 - 69",
       "bred_for": "Find and point gamebirds",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SJ5vzx5NX",
+      "image_url": "https://cdn2.thedogapi.com/images/SJ5vzx5NX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1245,7 +1245,7 @@
       "height": "71 - 81",
       "bred_for": "Hunting & holding boars, Guardian",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/B1Edfl9NX",
+      "image_url": "https://cdn2.thedogapi.com/images/B1Edfl9NX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1259,7 +1259,7 @@
       "height": "64 - 81",
       "bred_for": "Sheep guardian",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/B12uzg9V7",
+      "image_url": "https://cdn2.thedogapi.com/images/B12uzg9V7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1273,7 +1273,7 @@
       "height": "69 - 76",
       "bred_for": "Coursing hares",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/ryNYMx94X",
+      "image_url": "https://cdn2.thedogapi.com/images/ryNYMx94X.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1287,7 +1287,7 @@
       "height": "23 - 28",
       "bred_for": "Hunt and kill vermin in stables",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/ryoYGec4Q",
+      "image_url": "https://cdn2.thedogapi.com/images/ryoYGec4Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1301,7 +1301,7 @@
       "height": "46 - 56",
       "bred_for": "Hunting hares by trailing them",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/B1IcfgqE7",
+      "image_url": "https://cdn2.thedogapi.com/images/B1IcfgqE7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1315,7 +1315,7 @@
       "height": "22 - 29",
       "bred_for": "Companionship",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/rkXiGl9V7",
+      "image_url": "https://cdn2.thedogapi.com/images/rkXiGl9V7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1329,7 +1329,7 @@
       "height": "61 - 69",
       "bred_for": "Bird setting, retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/S1osGeqVm",
+      "image_url": "https://cdn2.thedogapi.com/images/S1osGeqVm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1343,7 +1343,7 @@
       "height": "46",
       "bred_for": "Not specified",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/By-hGecVX",
+      "image_url": "https://cdn2.thedogapi.com/images/By-hGecVX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1357,7 +1357,7 @@
       "height": "76 - 89",
       "bred_for": "Coursing wolves, elk",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/Hyd2zgcEX",
+      "image_url": "https://cdn2.thedogapi.com/images/Hyd2zgcEX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1371,7 +1371,7 @@
       "height": "33 - 38",
       "bred_for": "Lapdog",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/SJAnzg9NX",
+      "image_url": "https://cdn2.thedogapi.com/images/SJAnzg9NX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1385,7 +1385,7 @@
       "height": "20 - 28",
       "bred_for": "Lapdog",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/r1H6feqEm",
+      "image_url": "https://cdn2.thedogapi.com/images/r1H6feqEm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1399,7 +1399,7 @@
       "height": "30 - 38",
       "bred_for": "Companion",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/HksaMxqNX",
+      "image_url": "https://cdn2.thedogapi.com/images/HksaMxqNX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1413,7 +1413,7 @@
       "height": "43 - 46",
       "bred_for": "Barge watchdog",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/S1GAGg9Vm",
+      "image_url": "https://cdn2.thedogapi.com/images/S1GAGg9Vm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1427,7 +1427,7 @@
       "height": "65 - 70",
       "bred_for": "Sheep guardian",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/Bko0fl547",
+      "image_url": "https://cdn2.thedogapi.com/images/Bko0fl547.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1441,7 +1441,7 @@
       "height": "36 - 41",
       "bred_for": "Luring ducks into traps - \"tolling\"",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/kOMy84GQE",
+      "image_url": "https://cdn2.thedogapi.com/images/kOMy84GQE.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1455,7 +1455,7 @@
       "height": "66 - 76",
       "bred_for": "Guardian, hunting large game",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/BykZ7ecVX",
+      "image_url": "https://cdn2.thedogapi.com/images/BykZ7ecVX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1469,7 +1469,7 @@
       "height": "55 - 62",
       "bred_for": "Water retrieving",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/B1uW7l5VX",
+      "image_url": "https://cdn2.thedogapi.com/images/B1uW7l5VX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1483,7 +1483,7 @@
       "height": "41 - 48",
       "bred_for": "Water retrieval dog in the marshes of Romagna",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/ryzzmgqE7",
+      "image_url": "https://cdn2.thedogapi.com/images/ryzzmgqE7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1497,7 +1497,7 @@
       "height": "25 - 30",
       "bred_for": "Cattle herding, Ratting, Driving cattle to market.",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/S1RGml5Em",
+      "image_url": "https://cdn2.thedogapi.com/images/S1RGml5Em.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1511,7 +1511,7 @@
       "height": "65 - 80",
       "bred_for": "Guardian, appearance.",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/ByrmQlqVm",
+      "image_url": "https://cdn2.thedogapi.com/images/ByrmQlqVm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1525,7 +1525,7 @@
       "height": "25 - 28",
       "bred_for": "Guarding inside the home, companion",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SJp7Qe5EX",
+      "image_url": "https://cdn2.thedogapi.com/images/SJp7Qe5EX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1539,7 +1539,7 @@
       "height": "20 - 25",
       "bred_for": "Lapdog",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/B1SV7gqN7",
+      "image_url": "https://cdn2.thedogapi.com/images/B1SV7gqN7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1553,7 +1553,7 @@
       "height": "33 - 46",
       "bred_for": "Not specified",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/BkHHQgcN7",
+      "image_url": "https://cdn2.thedogapi.com/images/BkHHQgcN7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1567,7 +1567,7 @@
       "height": "25 - 32",
       "bred_for": "Small vermin hunting",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/Hy3H7g94X",
+      "image_url": "https://cdn2.thedogapi.com/images/Hy3H7g94X.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1581,7 +1581,7 @@
       "height": "30 - 36",
       "bred_for": "Ratting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/SJIUQl9NX",
+      "image_url": "https://cdn2.thedogapi.com/images/SJIUQl9NX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1595,7 +1595,7 @@
       "height": "66 - 71",
       "bred_for": "All purpose water dog, fishing aid",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/Sk4DXl54m",
+      "image_url": "https://cdn2.thedogapi.com/images/Sk4DXl54m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1609,7 +1609,7 @@
       "height": "23 - 25",
       "bred_for": "Ratting, fox bolting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/B1ADQg94X",
+      "image_url": "https://cdn2.thedogapi.com/images/B1ADQg94X.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1623,7 +1623,7 @@
       "height": "25",
       "bred_for": "Ratting, fox bolting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/BkgKXlqE7",
+      "image_url": "https://cdn2.thedogapi.com/images/BkgKXlqE7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1637,7 +1637,7 @@
       "height": "43 - 53",
       "bred_for": "Not specified",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SyYtQe5V7",
+      "image_url": "https://cdn2.thedogapi.com/images/SyYtQe5V7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1651,7 +1651,7 @@
       "height": "53",
       "bred_for": "Driving sheep, cattle",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/HkZ57lq4m",
+      "image_url": "https://cdn2.thedogapi.com/images/HkZ57lq4m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1665,7 +1665,7 @@
       "height": "38 - 48",
       "bred_for": "Not specified",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/B1d5me547",
+      "image_url": "https://cdn2.thedogapi.com/images/B1d5me547.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1679,7 +1679,7 @@
       "height": "20 - 28",
       "bred_for": "Lapdog",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/SkJj7e547",
+      "image_url": "https://cdn2.thedogapi.com/images/SkJj7e547.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1693,7 +1693,7 @@
       "height": "15 - 23",
       "bred_for": "Lapdog",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/ByIiml9Nm",
+      "image_url": "https://cdn2.thedogapi.com/images/ByIiml9Nm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1707,7 +1707,7 @@
       "height": "25 - 30",
       "bred_for": "Driving stock to market in northern Wales",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/rJ6iQeqEm",
+      "image_url": "https://cdn2.thedogapi.com/images/rJ6iQeqEm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1721,7 +1721,7 @@
       "height": "56 - 65",
       "bred_for": "Not specified",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/S1V3Qeq4X",
+      "image_url": "https://cdn2.thedogapi.com/images/S1V3Qeq4X.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1735,7 +1735,7 @@
       "height": "53 - 64",
       "bred_for": "Hunting rabbits",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/Byz6mgqEQ",
+      "image_url": "https://cdn2.thedogapi.com/images/Byz6mgqEQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1749,7 +1749,7 @@
       "height": "51 - 64",
       "bred_for": "Hunting big-game like Boar.",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/B1i67l5VQ",
+      "image_url": "https://cdn2.thedogapi.com/images/B1i67l5VQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1763,7 +1763,7 @@
       "height": "20 - 30",
       "bred_for": "Companion",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/HJd0XecNX",
+      "image_url": "https://cdn2.thedogapi.com/images/HJd0XecNX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1777,7 +1777,7 @@
       "height": "28 - 38",
       "bred_for": "Not specified",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/Hkxk4ecVX",
+      "image_url": "https://cdn2.thedogapi.com/images/Hkxk4ecVX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1791,7 +1791,7 @@
       "height": "23 - 28",
       "bred_for": "Not specified",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/rJFJVxc4m",
+      "image_url": "https://cdn2.thedogapi.com/images/rJFJVxc4m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1805,7 +1805,7 @@
       "height": "25 - 30",
       "bred_for": "Lapdog",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/HyJvcl9N7",
+      "image_url": "https://cdn2.thedogapi.com/images/HyJvcl9N7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1819,7 +1819,7 @@
       "height": "41 - 43",
       "bred_for": "Herding",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/ryPgVl5N7",
+      "image_url": "https://cdn2.thedogapi.com/images/ryPgVl5N7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1833,7 +1833,7 @@
       "height": "38 - 47",
       "bred_for": "Not specified",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/SyRe4xcN7",
+      "image_url": "https://cdn2.thedogapi.com/images/SyRe4xcN7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1847,7 +1847,7 @@
       "height": "25 - 33",
       "bred_for": "Not specified",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/HkXWNl9E7",
+      "image_url": "https://cdn2.thedogapi.com/images/HkXWNl9E7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1861,7 +1861,7 @@
       "height": "53 - 69",
       "bred_for": "Hunting raccoon, deer, bear, and cougar.",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/HJMzEl5N7",
+      "image_url": "https://cdn2.thedogapi.com/images/HJMzEl5N7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1875,7 +1875,7 @@
       "height": "61 - 69",
       "bred_for": "Big game hunting, guarding",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/By9zNgqE7",
+      "image_url": "https://cdn2.thedogapi.com/images/By9zNgqE7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1889,7 +1889,7 @@
       "height": "56 - 69",
       "bred_for": "Cattle drover, guardian, draft",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/r1xXEgcNX",
+      "image_url": "https://cdn2.thedogapi.com/images/r1xXEgcNX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1903,7 +1903,7 @@
       "height": "19 - 27",
       "bred_for": "Not specified",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/HkP7Vxc4Q",
+      "image_url": "https://cdn2.thedogapi.com/images/HkP7Vxc4Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1917,7 +1917,7 @@
       "height": "65 - 70",
       "bred_for": "Draft, search, rescue",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/_Qf9nfRzL",
+      "image_url": "https://cdn2.thedogapi.com/images/_Qf9nfRzL.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1931,7 +1931,7 @@
       "height": "58 - 71",
       "bred_for": "Coursing gazelle and hare",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/fjFIuehNo",
+      "image_url": "https://cdn2.thedogapi.com/images/fjFIuehNo.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1945,7 +1945,7 @@
       "height": "48 - 60",
       "bred_for": "Herding reindeer, guardian, draft",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/S1T8Ee9Nm",
+      "image_url": "https://cdn2.thedogapi.com/images/S1T8Ee9Nm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1959,7 +1959,7 @@
       "height": "25 - 33",
       "bred_for": "Barge watchdog",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SyBvVgc47",
+      "image_url": "https://cdn2.thedogapi.com/images/SyBvVgc47.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1973,7 +1973,7 @@
       "height": "71 - 81",
       "bred_for": "Coursing deer",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/SkNjqx9NQ",
+      "image_url": "https://cdn2.thedogapi.com/images/SkNjqx9NQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -1987,7 +1987,7 @@
       "height": "25",
       "bred_for": "Vermin hunting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/Bklnce5NX",
+      "image_url": "https://cdn2.thedogapi.com/images/Bklnce5NX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2001,7 +2001,7 @@
       "height": "33 - 41",
       "bred_for": "Sheep herding",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/rJa29l9E7",
+      "image_url": "https://cdn2.thedogapi.com/images/rJa29l9E7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2015,7 +2015,7 @@
       "height": "34 - 42",
       "bred_for": "Hunting in the mountains of Japan, Alert Watchdog",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/Zn3IjPX3f",
+      "image_url": "https://cdn2.thedogapi.com/images/Zn3IjPX3f.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2029,7 +2029,7 @@
       "height": "20 - 28",
       "bred_for": "Lapdog",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/BkrJjgcV7",
+      "image_url": "https://cdn2.thedogapi.com/images/BkrJjgcV7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2043,7 +2043,7 @@
       "height": "66 - 76",
       "bred_for": "Swimming, Carrying backpacks, Pulling carts or sleds",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/SJJxjecEX",
+      "image_url": "https://cdn2.thedogapi.com/images/SJJxjecEX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2057,7 +2057,7 @@
       "height": "51 - 60",
       "bred_for": "Sled pulling",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/S17ZilqNm",
+      "image_url": "https://cdn2.thedogapi.com/images/S17ZilqNm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2071,7 +2071,7 @@
       "height": "23 - 25",
       "bred_for": "Small vermin hunting, companionship",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/ByzGsl5Nm",
+      "image_url": "https://cdn2.thedogapi.com/images/ByzGsl5Nm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2085,7 +2085,7 @@
       "height": "39",
       "bred_for": "Fox bolting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/Syszjx9Em",
+      "image_url": "https://cdn2.thedogapi.com/images/Syszjx9Em.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2099,7 +2099,7 @@
       "height": "41 - 46",
       "bred_for": "Vermin hunting, guarding, all-around farm helper",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/HJHmix5NQ",
+      "image_url": "https://cdn2.thedogapi.com/images/HJHmix5NQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2113,7 +2113,7 @@
       "height": "41 - 51",
       "bred_for": "Herding flocks of sheep and goats from one pasture to another",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/HJf4jl9VX",
+      "image_url": "https://cdn2.thedogapi.com/images/HJf4jl9VX.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2127,7 +2127,7 @@
       "height": "57 - 70",
       "bred_for": "Not specified",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/rk5Eoe5Nm",
+      "image_url": "https://cdn2.thedogapi.com/images/rk5Eoe5Nm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2141,7 +2141,7 @@
       "height": "36 - 41",
       "bred_for": "Not specified",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/H1zSie9V7",
+      "image_url": "https://cdn2.thedogapi.com/images/H1zSie9V7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2155,7 +2155,7 @@
       "height": "44 - 50",
       "bred_for": "Ratting, guarding",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/tmzeu6ID_",
+      "image_url": "https://cdn2.thedogapi.com/images/tmzeu6ID_.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2169,7 +2169,7 @@
       "height": "29 - 34",
       "bred_for": "Not specified",
       "breed_group": "Herding",
-      "image_url": "https://api.thedogapi.com/v1/images/HJ-Dix94Q",
+      "image_url": "https://cdn2.thedogapi.com/images/HJ-Dix94Q.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2183,7 +2183,7 @@
       "height": "51 - 61",
       "bred_for": "Not specified",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/zv89hR-O8",
+      "image_url": "https://cdn2.thedogapi.com/images/zv89hR-O8.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2197,7 +2197,7 @@
       "height": "61 - 66",
       "bred_for": "Not specified",
       "breed_group": "Working",
-      "image_url": "https://api.thedogapi.com/v1/images/SkM9sec47",
+      "image_url": "https://cdn2.thedogapi.com/images/SkM9sec47.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2211,7 +2211,7 @@
       "height": "25",
       "bred_for": "Not specified",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/Hyjcol947",
+      "image_url": "https://cdn2.thedogapi.com/images/Hyjcol947.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2225,7 +2225,7 @@
       "height": "36 - 43",
       "bred_for": "Good luck charms, mascots, watchdogs, herding dogs, and companions",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/6f5n_42mB",
+      "image_url": "https://cdn2.thedogapi.com/images/6f5n_42mB.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2239,7 +2239,7 @@
       "height": "20 - 28",
       "bred_for": "Not specified",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/B17ase9V7",
+      "image_url": "https://cdn2.thedogapi.com/images/B17ase9V7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2253,7 +2253,7 @@
       "height": "51 - 69",
       "bred_for": "Not specified",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/SkRpsgc47",
+      "image_url": "https://cdn2.thedogapi.com/images/SkRpsgc47.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2267,7 +2267,7 @@
       "height": "53 - 61",
       "bred_for": "Pointing and trailing",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/r1o0jx9Em",
+      "image_url": "https://cdn2.thedogapi.com/images/r1o0jx9Em.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2281,7 +2281,7 @@
       "height": "58 - 69",
       "bred_for": "Large game trailing and versatile gundog",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/SyU12l9V7",
+      "image_url": "https://cdn2.thedogapi.com/images/SyU12l9V7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2295,7 +2295,7 @@
       "height": "43 - 48",
       "bred_for": "Flushing and retrieving birds",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/BJ1gnx5Vm",
+      "image_url": "https://cdn2.thedogapi.com/images/BJ1gnx5Vm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2309,7 +2309,7 @@
       "height": "25 - 28",
       "bred_for": "Fox, badger, vermin hunting",
       "breed_group": "Terrier",
-      "image_url": "https://api.thedogapi.com/v1/images/Bkdx2g5Em",
+      "image_url": "https://cdn2.thedogapi.com/images/Bkdx2g5Em.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2323,7 +2323,7 @@
       "height": "46 - 56",
       "bred_for": "Coursing, racing",
       "breed_group": "Hound",
-      "image_url": "https://api.thedogapi.com/v1/images/Hyv-ne94m",
+      "image_url": "https://cdn2.thedogapi.com/images/Hyv-ne94m.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2337,7 +2337,7 @@
       "height": "56 - 64",
       "bred_for": "Not specified",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/r14M3e9E7",
+      "image_url": "https://cdn2.thedogapi.com/images/r14M3e9E7.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2351,7 +2351,7 @@
       "height": "33 - 41",
       "bred_for": "Vermin hunting, fox bolting",
       "breed_group": "Not specified",
-      "image_url": "https://api.thedogapi.com/v1/images/SJ6f2g9EQ",
+      "image_url": "https://cdn2.thedogapi.com/images/SJ6f2g9EQ.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2365,7 +2365,7 @@
       "height": "51 - 61",
       "bred_for": "Gundog, \"swamp-tromping\", Flushing, pointing, and retrieving water fowl & game birds",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/Bkam2l9Vm",
+      "image_url": "https://cdn2.thedogapi.com/images/Bkam2l9Vm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2379,7 +2379,7 @@
       "height": "55 - 64",
       "bred_for": "Not specified",
       "breed_group": "Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/r1I4hl5Em",
+      "image_url": "https://cdn2.thedogapi.com/images/r1I4hl5Em.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2393,7 +2393,7 @@
       "height": "25 - 58",
       "bred_for": "Not specified",
       "breed_group": "Non-Sporting",
-      "image_url": "https://api.thedogapi.com/v1/images/HkNS3gqEm",
+      "image_url": "https://cdn2.thedogapi.com/images/HkNS3gqEm.jpg",
       "wikipedia_url": ""
     },
     {
@@ -2407,7 +2407,7 @@
       "height": "20 - 23",
       "bred_for": "Small vermin hunting",
       "breed_group": "Toy",
-      "image_url": "https://api.thedogapi.com/v1/images/B12BnxcVQ",
+      "image_url": "https://cdn2.thedogapi.com/images/B12BnxcVQ.jpg",
       "wikipedia_url": ""
     }
   ]

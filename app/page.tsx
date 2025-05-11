@@ -191,7 +191,7 @@ export default function DogBreedSearch() {
           <div className="md:hidden border-t border-b">
             <Tabs defaultValue="search" className="w-full">
               <TabsList className="grid grid-cols-3 w-full">
-                <TabsTrigger value="search">Поиск</TabsTrigger>
+                <TabsTrigger value="search">Каталог</TabsTrigger>
                 <TabsTrigger value="chatgpt">ChatGPT</TabsTrigger>
                 <TabsTrigger value="wikipedia">Википедия</TabsTrigger>
               </TabsList>

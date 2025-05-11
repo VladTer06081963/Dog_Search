@@ -29,21 +29,6 @@ interface Breed {
   description?: string;
 }
 
-// interface EnrichedBreed {
-//   id: number;
-//   name: string;
-//   description: string;
-//   temperament: string;
-//   life_span: string;
-//   origin: string;
-//   weight: string;
-//   height: string;
-//   bred_for: string;
-//   breed_group: string;
-//   image_url: string;
-//   wikipedia_url: string;
-// }
-
 interface CacheData {
   timestamp: number;
   dataHash: string;
@@ -70,9 +55,6 @@ async function fetchAllBreeds(): Promise<Breed[]> {
 }
 
 async function enrichBreed(breed: Breed): Promise<EnrichedBreed> {
-  // const imageUrl = breed.reference_image_id
-  //   ? `${DOG_API_URL}/images/${breed.reference_image_id}`
-  //   : `${DOG_API_URL}/images/dog-placeholder.jpg`;
   const imageUrl = breed.reference_image_id
     ? `https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`
     : "/placeholder.svg";
@@ -114,7 +96,6 @@ async function fetchAndCacheBreeds(
     const newCache: CacheData = {
       timestamp: Date.now(),
       dataHash: currentHash,
-      // breeds: enrichedBreeds.filter((b) => b.image_url),
       breeds: enrichedBreeds.filter((b) => b.image_url && b.name),
     };
 

@@ -15,6 +15,7 @@ import { PawPrint } from "lucide-react";
 
 
 export default function DogBreedSearch() {
+  
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBreed, setSelectedBreed] = useState("");
   const [breedInfo, setBreedInfo] = useState<any>(null);
@@ -102,22 +103,11 @@ export default function DogBreedSearch() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-white border-b p-4">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold inline-flex items-center justify-center gap-2">
-            <PawPrint className="w-6 h-6 text-blue-600" />
-            Поиск пород собак
-          </h1>
-          <h3 className="text-xl font-bold text-center text-gray-700 mt-1">
-            Узнай всё о своём любимце 🐾
-          </h3>
-        </div>
-      </header>
-
+    // <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       <main className="flex flex-1 overflow-hidden">
         {/* Левая панель (только на десктопе) */}
-        <aside className="w-64 bg-white border-r p-4 hidden md:block">
+        <aside className="w-64 bg-card text-card-foreground border-r p-4 hidden md:block">
           <Card>
             <CardHeader>
               <CardTitle className="text-sm font-medium flex items-center">
@@ -155,7 +145,7 @@ export default function DogBreedSearch() {
         {/* Центральная часть */}
         <div className="flex-1 flex flex-col">
           {/* Поисковая строка и кнопки */}
-          <div className="p-6 bg-white">
+          <div className="p-6 bg-card text-card-foreground">
             <div className="max-w-xl mx-auto flex flex-col gap-3">
               <Input
                 placeholder="Введите породу собаки"
@@ -292,9 +282,7 @@ export default function DogBreedSearch() {
           <div className="flex-1 p-4 overflow-auto">
             {isLoading ? (
               <p className="text-center text-gray-500">Поиск породы...</p>
-              
             ) : breedInfo ? (
-                
               <DogBreedCard breed={breedInfo} />
             ) : hasSearched ? (
               <p className="text-center text-gray-500">Порода не найдена.</p>
@@ -316,7 +304,7 @@ export default function DogBreedSearch() {
         </div>
 
         {/* Правая панель (только на десктопе) */}
-        <aside className="w-64 bg-white border-l p-4 hidden md:flex flex-col gap-6">
+        <aside className="w-64 bg-card text-card-foreground border-l p-4 hidden md:flex flex-col gap-6">
           {/* Википедия */}
           <Card>
             <CardHeader>
@@ -370,7 +358,6 @@ export default function DogBreedSearch() {
             </CardContent>
           </Card>
 
-      
           {/* Каталог пород */}
           <BreedDirectory
             onSelect={(breedName) => {
@@ -390,16 +377,16 @@ export default function DogBreedSearch() {
         </aside>
       </main>
 
-      <footer className="bg-white border-t p-4">
+      <footer className="bg-card text-card-foreground border-t p-4">
         <div className="max-w-6xl mx-auto">
           {isLoading ? (
             <p className="text-center text-gray-500">Загрузка информации...</p>
           ) : infoContent ? (
-            <div className="p-4 bg-gray-50 rounded-lg">
+            <div className="p-4 bg-muted text-muted-foreground rounded-lg border border-border">
               <h3 className="text-sm font-medium mb-2 flex items-center">
                 <Info className="h-4 w-4 mr-2" />
                 Информация о породе {selectedBreed}
-                <span className="ml-2 text-xs text-gray-500">
+                <span className="ml-2 text-xs text-muted-foreground">
                   (Источник: {activeSource})
                 </span>
               </h3>
@@ -407,12 +394,10 @@ export default function DogBreedSearch() {
               {activeSource === "chatgpt" ? (
                 <div className="text-sm [&>p]:mb-2">
                   {infoContent.split("\n").map((paragraph, i) => {
-                    // Обрабатываем markdown-ссылки в каждом параграфе
                     const processedParagraph = paragraph.replace(
                       /\[(.*?)\]\((.*?)\)/g,
-                      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">$1</a>'
+                      '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">$1</a>'
                     );
-
                     return (
                       <p
                         key={i}

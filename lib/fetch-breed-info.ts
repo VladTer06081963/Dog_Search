@@ -10,6 +10,7 @@ interface BreedInfo {
   description: string;
   imageUrl: string | null;
   wikiUrl?: string | null;
+  rawContent?: string;
   markdownContent?: string;
   isMarkdown?: boolean;
 }
@@ -26,11 +27,7 @@ export async function fetchBreedInfo(
   lang: string = "en"
 ) {
   setIsLoading(true);
-  if (source !== "default") {
-    setActiveSource(source);
-  }
-
-  // setActiveSource(source);
+  if (source !== "default") setActiveSource(source);
 
   try {
     if (source === "chatgpt") {
@@ -39,24 +36,20 @@ export async function fetchBreedInfo(
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ breed }),
       });
-
       const data = await response.json();
-      if (!response.ok || data.error)
-        throw new Error(data.error || "Ошибка ChatGPT");
 
+      const imageMatch = data.markdown?.match(/!\[.*?\]\((.*?)\)/);
+      const imageUrl = imageMatch?.[1] || data.imageUrl || null;
+
+      setInfoContent(data.result);
       setBreedInfo({
         name: breed,
         origin: "ChatGPT",
-        description: data.markdown,
+        description: data.result,
+        imageUrl,
         markdownContent: data.markdown,
         isMarkdown: true,
-        imageUrl: data.imageUrl || null,
-        temperament: "",
-        lifeSpan: "",
-        wikiUrl: null,
       });
-
-      setInfoContent(data.markdown);
       return;
     }
 
@@ -66,56 +59,49 @@ export async function fetchBreedInfo(
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ breed, lang }),
       });
-
       const data = await res.json();
-      if (!res.ok || data.error)
-        throw new Error(data.error || "Ошибка Википедии");
 
+      if (!res.ok || data.error) throw new Error(data.error);
+
+      setInfoContent(data.result.text);
       setBreedInfo({
         name: data.result.title,
         origin: "Wikipedia",
-        description: data.result.text,
-        imageUrl: data.result.image || null,
         temperament: "",
         lifeSpan: "",
+        description: data.result.text,
+        imageUrl: data.result.image || null,
         wikiUrl: data.result.url || null,
         isMarkdown: false,
       });
-
-      setInfoContent(data.result.text);
       return;
     }
 
-    // fallback: Dog API + wiki
+    // default: try Dog API, fallback Wikipedia
     const res = await fetch("/api/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query: breed }),
     });
-
     const data = await res.json();
-    if (!res.ok || data.error) throw new Error(data.error || "Ошибка поиска");
 
-    if (!data.result?.text) {
-      throw new Error("Описание не найдено ни в Dog API, ни в Википедии.");
-    }
+    if (!res.ok || data.error) throw new Error(data.error);
 
+    setInfoContent(data.result.text);
     setBreedInfo({
       name: data.result.title,
-      origin: data.source === "dogapi" ? "Dog API" : "Wikipedia",
-      description: data.result.text,
-      imageUrl: data.result.image || null,
+      origin: data.source,
       temperament: data.result.temperament || "",
       lifeSpan: data.result.lifeSpan || "",
+      description: data.result.text,
+      imageUrl: data.result.image || null,
       wikiUrl: data.result.url || null,
       isMarkdown: false,
     });
-
-    setInfoContent(data.result.text);
     setActiveSource(data.source);
-  } catch (error) {
-    console.error("Ошибка получения информации:", error);
-    setInfoContent(`Ошибка: ${(error as Error).message}`);
+  } catch (err) {
+    console.error("🐞 fetchBreedInfo error:", err);
+    setInfoContent("Ошибка: " + (err as Error).message);
   } finally {
     setIsLoading(false);
   }

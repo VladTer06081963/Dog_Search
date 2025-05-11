@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { WikipediaModal } from "./wikipedia-modal";
 import type { DogBreed as BaseDogBreed } from "@/lib/dog-api";
 
 interface ExtendedDogBreed extends BaseDogBreed {
@@ -30,6 +31,7 @@ function extractFileNameFromContent(content: string): string | null {
 
 export function DogBreedCard({ breed }: DogBreedCardProps) {
   const [resolvedImageUrl, setResolvedImageUrl] = useState<string | null>(null);
+  const [isWikiOpen, setIsWikiOpen] = useState(false);
 
   const isMarkdown =
     breed.isMarkdown || breed.origin === "ChatGPT" || !!breed.markdownContent;
@@ -41,12 +43,7 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
   useEffect(() => {
     let isMounted = true;
 
-    if (containsMarkdownImage) {
-      console.log(
-        "⛔ Пропускаем загрузку imageUrl — есть изображение в Markdown"
-      );
-      return () => {};
-    }
+    if (containsMarkdownImage) return;
 
     async function resolveImage() {
       if (breed.imageUrl) {
@@ -77,122 +74,102 @@ export function DogBreedCard({ breed }: DogBreedCardProps) {
   }, [breed.imageUrl, extractedFileName, containsMarkdownImage]);
 
   return (
-    <Card className="w-full shadow-md">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-xl">{breed.name}</CardTitle>
-        {breed.origin && (
-          <p className="text-xs text-gray-500">Источник: {breed.origin}</p>
-        )}
-      </CardHeader>
+    <>
+      <Card className="w-full bg-card text-card-foreground border border-border shadow-sm">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-xl">{breed.name}</CardTitle>
+          {breed.origin && (
+            <p className="text-xs text-muted-foreground">
+              Источник: {breed.origin}
+            </p>
+          )}
+        </CardHeader>
 
-      <CardContent className="space-y-4">
-        {!containsMarkdownImage && resolvedImageUrl && (
-          <div className="relative w-full h-64 overflow-hidden rounded-md">
-            <img
-              src={resolvedImageUrl}
-              alt={breed.name}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                console.warn(
-                  "🚫 Ошибка загрузки основного изображения:",
-                  e.currentTarget.src
-                );
-                e.currentTarget.src = "/placeholder.svg";
-              }}
-            />
-          </div>
-        )}
+        <CardContent className="space-y-4">
+          {!containsMarkdownImage && resolvedImageUrl && (
+            <div className="w-full max-h-[400px] overflow-hidden rounded-md flex justify-center bg-muted">
+              <img
+                src={resolvedImageUrl}
+                alt={breed.name}
+                className="rounded-md object-contain max-h-[400px] w-auto"
+                onError={(e) => {
+                  e.currentTarget.src = "/placeholder.svg";
+                }}
+              />
+            </div>
+          )}
 
-        <div className="space-y-2">
-          <h3 className="font-medium">Описание</h3>
-          {isMarkdown ? (
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
-                a: ({ node, ...props }) => (
-                  <a
-                    {...props}
-                    className="text-blue-600 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                ),
-                p: ({ node, ...props }) => <p className="text-sm" {...props} />,
-                img: ({ node, ...props }) => {
-                  console.log("🖼️ Рендерим Markdown изображение:", props.src);
-
-                  const handleError = (
-                    e: React.SyntheticEvent<HTMLImageElement>
-                  ) => {
-                    const fallback = breed.imageUrl || "/placeholder.svg";
-
-                    if (
-                      !fallback ||
-                      props.src === fallback ||
-                      e.currentTarget.src === fallback ||
-                      e.currentTarget.src.endsWith("placeholder.svg")
-                    ) {
-                      console.warn(
-                        "♻️ Подставляем placeholder.svg — Markdown и fallback не помогли"
-                      );
-                      e.currentTarget.src = "/placeholder.svg";
-                      return;
-                    }
-
-                    console.warn(
-                      "🚫 Markdown img error:",
-                      props.src,
-                      "→ fallback:",
-                      fallback
+          <div className="space-y-2">
+            <h3 className="font-medium">Описание</h3>
+            {isMarkdown ? (
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  a: ({ href, children, ...props }) => {
+                    const isWiki = href?.includes("wikipedia.org");
+                    return isWiki ? (
+                      <button
+                        onClick={() => setIsWikiOpen(true)}
+                        className="text-primary underline hover:opacity-80"
+                      >
+                        {children}
+                      </button>
+                    ) : (
+                      <a
+                        {...props}
+                        href={href}
+                        className="text-primary underline hover:opacity-80"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {children}
+                      </a>
                     );
-                    e.currentTarget.src = fallback;
-                  };
-
-                  return (
+                  },
+                  p: ({ node, ...props }) => (
+                    <p className="text-sm" {...props} />
+                  ),
+                  img: ({ node, ...props }) => (
                     <img
                       {...props}
-                      onError={handleError}
-                      className="rounded-md max-w-full h-auto border border-gray-200 shadow-sm my-4"
+                      className="rounded-md max-w-full h-auto border border-border shadow-sm my-4"
                       alt={props.alt || ""}
+                      onError={(e) => {
+                        e.currentTarget.src = "/placeholder.svg";
+                      }}
                     />
-                  );
-                },
-              }}
-            >
-              {contentToRender}
-            </ReactMarkdown>
-          ) : (
-            <p className="text-sm whitespace-pre-line">{contentToRender}</p>
+                  ),
+                }}
+              >
+                {contentToRender}
+              </ReactMarkdown>
+            ) : (
+              <p className="text-sm whitespace-pre-line">{contentToRender}</p>
+            )}
+          </div>
+
+          {breed.temperament && (
+            <div>
+              <h3 className="font-medium">Характер</h3>
+              <p className="text-sm">{breed.temperament}</p>
+            </div>
           )}
-        </div>
 
-        {breed.temperament && (
-          <div>
-            <h3 className="font-medium">Характер</h3>
-            <p className="text-sm">{breed.temperament}</p>
-          </div>
-        )}
+          {breed.lifeSpan && (
+            <div>
+              <h3 className="font-medium">Продолжительность жизни</h3>
+              <p className="text-sm">{breed.lifeSpan}</p>
+            </div>
+          )}
+        </CardContent>
+      </Card>
 
-        {breed.lifeSpan && (
-          <div>
-            <h3 className="font-medium">Продолжительность жизни</h3>
-            <p className="text-sm">{breed.lifeSpan}</p>
-          </div>
-        )}
-
-        {breed.wikiUrl && (
-          <div>
-            <a
-              href={breed.wikiUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline text-sm"
-            >
-              Подробнее на Википедии
-            </a>
-          </div>
-        )}
-      </CardContent>
-    </Card>
+      <WikipediaModal
+        breedName={breed.name}
+        isOpen={isWikiOpen}
+        onClose={() => setIsWikiOpen(false)}
+        defaultLang="ru"
+      />
+    </>
   );
 }

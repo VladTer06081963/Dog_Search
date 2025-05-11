@@ -12,10 +12,9 @@ import { getRandomDogBreed, searchDogBreed } from "@/lib/dog-api";
 import { fetchBreedInfo } from "@/lib/fetch-breed-info";
 import { BreedDirectory } from "@/components/BreedDirectory";
 import { PawPrint } from "lucide-react";
-
+import { X } from "lucide-react";
 
 export default function DogBreedSearch() {
-  
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBreed, setSelectedBreed] = useState("");
   const [breedInfo, setBreedInfo] = useState<any>(null);
@@ -147,13 +146,26 @@ export default function DogBreedSearch() {
           {/* Поисковая строка и кнопки */}
           <div className="p-6 bg-card text-card-foreground">
             <div className="max-w-xl mx-auto flex flex-col gap-3">
-              <Input
-                placeholder="Введите породу собаки"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                className="w-full"
-              />
+              <div className="relative w-full">
+                <Input
+                  placeholder="Введите породу собаки"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                  className="w-full pr-10"
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                    aria-label="Очистить поле"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+
               <div className="flex gap-2 justify-between">
                 <Button
                   onClick={handleSearch}

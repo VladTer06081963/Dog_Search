@@ -14,6 +14,8 @@ const CACHE_FILE = path.join("/tmp", "dog_breeds_cache.json");
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 часа
 const DOG_API_URL = "https://api.thedogapi.com/v1";
 
+console.log("Кеш файлы:", await fs.readdir('/tmp'));
+
 // Типы данных
 interface Breed {
   id: number;

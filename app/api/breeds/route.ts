@@ -7,14 +7,13 @@ import path from "path";
 import crypto from "crypto";
 import { EnrichedBreed } from "@/types";
 
-
 // Конфигурация кеширования
 // const CACHE_FILE = path.join(process.cwd(), "data", "dog_breeds_cache.json");
 const CACHE_FILE = path.join("/tmp", "dog_breeds_cache.json");
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 часа
 const DOG_API_URL = "https://api.thedogapi.com/v1";
 
-console.log("Кеш файлы:", fs.readdir('/tmp'));
+console.log("Кеш файлы:", fs.readdir("/tmp"));
 
 // Типы данных
 interface Breed {
@@ -61,7 +60,6 @@ async function enrichBreed(breed: Breed): Promise<EnrichedBreed> {
   const imageUrl = breed.reference_image_id
     ? `https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`
     : "/placeholder.svg";
-
 
   return {
     id: breed.id,
